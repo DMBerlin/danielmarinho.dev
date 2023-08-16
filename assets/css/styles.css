@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Biotif";
+  src:
+    url("/static/fonts/Biotif-Bold.woff") format("woff"),
+    url("/static/fonts/Biotif-SemiBold.woff") format("woff"),
+    url("/static/fonts/Biotif-Regular.woff") format("woff"),
+    url("/static/fonts/Biotif-RegularItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

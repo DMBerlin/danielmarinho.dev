@@ -1,0 +1,126 @@
+<script setup lang="ts">
+import { onBeforeMount, ref } from "vue";
+import TextQuote from "~/components/TextQuote.vue";
+import { useNewTab } from "~/composables/useNewTab";
+import GradientTitle from "~/components/GradientTitle.vue";
+import RegularButton from "~/components/RegularButton.vue";
+import { useExperiences } from "~/composables/useExperiences";
+import { usePublicConfig } from "~/composables/usePublicConfig";
+import { useNavigationStateHandler } from "~/composables/useNavigation";
+
+const { cvFileUrl } = usePublicConfig();
+const experiences = await useExperiences();
+const downloadResume = ref(() => useNewTab(cvFileUrl));
+onBeforeMount(() => useNavigationStateHandler());
+</script>
+<template lang="pug">
+div.flex.flex-col.flex-grow.bg-black
+  div.flex.justify-center.items-center
+    div.wrapper
+      section
+        div.flex.justify-start.items-start.mt-10.mb-8
+          GradientTitle(
+            title="Learn. Improve. Repeat."
+            left-color="#ffff80"
+            right-color="#ff80bf"
+          )
+      section
+        div.flex.justify-start.items-start
+          div.presentation-area
+            div.flex.pr-4
+              span.profile-pic
+            div.flex
+              div.text-area
+                p.pb-5 Hi! I'm <label class="text-highlight">Daniel Marinho</label>, a Computer Scientist graduated from Brazil in late 2015. But my journey with computers started way back in my childhood, during a time when "GeoCities" was still a thing!
+                p.pb-5 Web engineering is my true passion! When I'm not engrossed in coding, you'll likely find me immersed in documentaries and movies from the 80s or contributing on Open Source Communities.
+      section
+        p.section-title Bio
+        p.section-paragraph Here you can find a little bit of my professional background and companies I worked for.
+      section
+        TextQuote(quote="Computer scientist with a 4-year Brazilian bachelor's degree and 8+ years of software engineering experience. Expert in problem-solving throughout the software development life cycle. Enthusiastic, team-oriented, and committed to creating exceptional user experiences through collaboration and continuous learning.")
+      section.flex.justify-end.items-end
+        RegularButton(icon="/static/icons/copy-icon.svg" ald="Download" label="Copy Bio")
+        p.text-gray-400.text-xl.mx-4.pb-2  •
+        RegularButton(@click="downloadResume" icon="/static/icons/download-icon.svg" ald="Download" label="Download Resumé")
+      section
+        p.section-title Career
+        template(v-for="experience in experiences")
+          CareerExperienceCard(
+            :company-name="experience.companyName"
+            :company-url="experience.companyUrl"
+            :job-location="experience.jobLocation"
+            :job-title="experience.jobTitle"
+            :start-date="new Date(experience.startDate)"
+            :end-date="new Date(experience.endDate)"
+          )
+      section
+        div.py-16
+    div.w-auto
+</template>
+<style scoped>
+.wrapper {
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 0 20px;
+}
+
+.section-title {
+  color: #f2f2f2;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 16px 0;
+  font-family:
+    Neuzeit Grotesk Bold,
+    sans-serif;
+}
+
+.section-paragraph {
+  color: #8f9ba8;
+  font-size: 16px;
+  line-height: 32px;
+  margin: 16px 0;
+  font-family: Biotif-Regular, sans-serif;
+}
+
+.text-highlight {
+  color: #f1f1f1;
+  font-weight: bold;
+}
+
+.text-area {
+  font-size: 16px;
+  line-height: 32px;
+  color: #8f9ba8;
+  text-align: left;
+  font-family: Biotif-Regular, sans-serif;
+}
+
+.presentation-area {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 18em;
+  height: 18em;
+  border-radius: 6px;
+  background-image: url("/static/img/profile-pic.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .text-area {
+    text-align: justify;
+  }
+  .presentation-area {
+    flex-direction: column;
+  }
+  .profile-pic {
+    margin: 0 0 32px 0;
+  }
+}
+</style>
