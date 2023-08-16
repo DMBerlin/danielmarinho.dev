@@ -1,15 +1,15 @@
-# danielmarinho.dev
-
-> My personal website 
+## 🚀 My Personal Page
+This page was built to highlight my career as a Software Engineer and projects that I have built.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDMBerlin%2Fdanielmarinho.dev)
 
-## Technology stack
+## 🧩 Stack
 
 - **Front-end:** [Nuxt](https://nuxt.com/)
+- **Styles:** [Tailwind](https://tailwindcss.nuxtjs.org)
 - **Deployment:** [Vercel](https://vercel.com/)
 
-## Running locally
+## 💻 Running locally
 
 1. Clone this repo:
 
@@ -35,7 +35,7 @@ pnpm install
 pnpm dev -o
 ```
 
-## File structure
+## 🗂️ File structure
 
 The base for the project file structure is stated on the Nuxt documentation and its use guide for automatic imports. You can find more about it [here](https://nuxt.com/docs/getting-started/introduction).
 
@@ -90,6 +90,10 @@ Here you'll find all the types used on the project.
 
 Here you'll find all the utility functions used on the project.
 
-## License
+## 📖 License
 
 [MIT License](http://zenorocha.mit-license.org/) © Daniel Marinho
+
+## 🤝 Open Source
+
+Feel free to copy this project and use it your way! I'll keep it updated with new ideas or suggestions I get along the way. 😊
