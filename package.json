@@ -7,9 +7,6 @@
   },
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "^20.2.0"
-  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --dotenv .env.local",
