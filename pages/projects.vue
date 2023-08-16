@@ -94,7 +94,7 @@ div.flex.flex-col.flex-grow.bg-black
   font-size: 18px;
   font-weight: bold;
   color: #f1f1f1;
-  font-family: "Fira Code", monospace;
+  font-family: "Fira Code", sans-serif;
   border-bottom: 1px #8f9ba8 dotted;
 }
 .project-description {
@@ -102,7 +102,7 @@ div.flex.flex-col.flex-grow.bg-black
   font-weight: normal;
   font-size: 16px;
   color: #8f9ba8;
-  font-family: "Fira Code", monospace;
+  font-family: "Fira Code", sans-serif;
   line-height: 32px;
   margin: 16px 12px;
 }

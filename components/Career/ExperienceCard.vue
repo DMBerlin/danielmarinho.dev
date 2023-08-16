@@ -28,7 +28,7 @@ div.career-card
   font-weight: lighter;
   font-size: 16px;
   color: #8f9ba8;
-  font-family: "Fira Code", monospace;
+  font-family: "Fira Code", sans-serif;
   margin: 0;
   line-height: 32px;
 }
@@ -37,7 +37,7 @@ div.career-card
   font-weight: normal;
   font-size: 16px;
   color: #8f9ba8;
-  font-family: "Fira Code", monospace;
+  font-family: "Fira Code", sans-serif;
   margin: 0 8px;
   line-height: 32px;
   left: 0.4em;
@@ -46,7 +46,7 @@ div.career-card
   position: relative;
   font-size: 16px;
   color: #f1f1f1;
-  font-family: "Fira Code", monospace;
+  font-family: "Fira Code", sans-serif;
   cursor: pointer;
   transition: all ease 0.3s;
   line-height: 32px;
@@ -65,7 +65,7 @@ div.career-card
 .career-title {
   font-size: 18px;
   color: #f1f1f1;
-  font-family: "Fira Code", monospace;
+  font-family: "Fira Code", sans-serif;
 }
 @media screen and (max-width: 768px) {
   .career-company {
@@ -73,7 +73,7 @@ div.career-card
     position: relative;
     font-size: 16px;
     color: #f1f1f1;
-    font-family: "Fira Code", monospace;
+    font-family: "Fira Code", sans-serif;
     cursor: pointer;
     transition: all ease 0.3s;
     line-height: 32px;
@@ -86,7 +86,7 @@ div.career-card
     font-weight: normal;
     font-size: 16px;
     color: #8f9ba8;
-    font-family: "Fira Code", monospace;
+    font-family: "Fira Code", sans-serif;
     margin: 0 8px;
     line-height: 32px;
     left: 0.4em;
