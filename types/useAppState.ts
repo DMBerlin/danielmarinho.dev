@@ -7,6 +7,7 @@ export interface PublicRuntimeConfig {
   linkedIn: string;
   instagram: string;
   cvFileUrl: string;
+  siteAuthor: string;
 }
 
 export interface RuntimeConfig {
