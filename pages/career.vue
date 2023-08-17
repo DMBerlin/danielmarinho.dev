@@ -8,6 +8,12 @@ import { useExperiences } from "~/composables/useExperiences";
 import { usePublicConfig } from "~/composables/usePublicConfig";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 
+const config = usePublicConfig();
+
+useHead({
+  title: "Career // " + config.siteAuthor,
+});
+
 const { cvFileUrl } = usePublicConfig();
 const experiences = await useExperiences();
 const downloadResume = ref(() => useNewTab(cvFileUrl));

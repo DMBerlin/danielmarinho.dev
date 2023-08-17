@@ -3,6 +3,12 @@ import { onBeforeMount } from "vue";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import GradientTitle from "~/components/GradientTitle.vue";
 
+const config = usePublicConfig();
+
+useHead({
+  title: "About // " + config.siteAuthor,
+});
+
 onBeforeMount(() => useNavigationStateHandler());
 </script>
 <template lang="pug">

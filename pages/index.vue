@@ -3,6 +3,12 @@ import { useAppState } from "~/composables/useAppState";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import { onBeforeMount } from 'vue';
 
+const config = usePublicConfig();
+
+useHead({
+  title: config.siteAuthor,
+});
+
 const state = useAppState();
 const { isWindows } = useDevice();
 const openMenu = () => {

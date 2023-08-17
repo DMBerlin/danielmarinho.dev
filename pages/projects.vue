@@ -5,6 +5,13 @@ import GradientTitle from "~/components/GradientTitle.vue";
 import { useIntersects, useProjects } from "~/composables/useProjects";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import { useTechStack } from '~/composables/useTechStack';
+import { usePublicConfig } from '~/composables/usePublicConfig';
+
+const config = usePublicConfig();
+
+useHead({
+  title: "Projects // " + config.siteAuthor,
+});
 
 const state = useAppState();
 const techStack = useTechStack();
