@@ -90,6 +90,22 @@ Here you'll find all the types used on the project.
 
 Here you'll find all the utility functions used on the project.
 
+## 📝 Environment Variables
+
+This projects use environment variables to set custom string values to certain config parameters. Here are a list of environment variables you can customize:
+
+``` dotenv
+REPOSITORY_URL="" # URL to the projects git repository
+LINKEDIN_PROFILE_URL="" # Your LinkedIn url profile
+INSTAGRAM_PROFILE_URL="" # Your Instagram url profile
+GITHUB_PROFILE_URL="" # Your GitHub profile
+TWITTER_PROFILE_URL="" # Your Twitter profile
+EMAIL_PROFILE_URL="" # Your email contact
+BASE_URL="" # This site url
+SITE_AUTHOR="" # Your name
+CV_FILE_URL="" # Your CV download path
+```
+
 ## 📖 License
 
 [MIT License](http://zenorocha.mit-license.org/) © Daniel Marinho
