@@ -1,11 +1,14 @@
-import { ProjectTechStack } from '~/types/useProjects';
+import { useFetch } from "#app";
+import { _AsyncData } from "#app/composables/asyncData";
+import { FetchError } from "ofetch/dist/node";
 import { useTechIndexation } from "~/composables/useTechStack";
-import { useFetch } from '#app';
-import { _AsyncData } from '#app/composables/asyncData';
-import { FetchError } from 'ofetch/dist/node';
+import { ProjectTechStack } from "~/types/useProjects";
 
 export const useProjects = async (): Promise<ProjectTechStack> => {
-  const response: _AsyncData<ProjectTechStack, FetchError<any>> = await useFetch('/api/projects');
+  const response: _AsyncData<
+    ProjectTechStack,
+    FetchError<any>
+  > = await useFetch("/api/projects");
   if (response.error.value) throw new Error(response.error.value.message);
   return response.data?.value || [];
 };
