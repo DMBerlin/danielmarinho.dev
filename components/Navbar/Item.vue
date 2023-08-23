@@ -19,10 +19,10 @@ nuxt-link(:to="props.path")
       div.underline(:class="isCurrentRoute ? 'underline-selected' : 'underline-default'")
 
 </template>
-<style scoped>
+<style scoped lang="scss">
 .menu {
   font-size: 12px;
-  font-family: Biotif-Regular, sans-serif;
+  font-family: $--fonts-body;
   padding: 15px 15px;
   margin: 8px 15px;
   transition: all 0.3s ease;

@@ -16,8 +16,9 @@ const gradientStyle = computed(
 div
   p(:style="gradientStyle").gradient-this {{ props.title }}
 </template>
-<style scoped>
+<style scoped lang="scss">
 .gradient-this {
+  font-family: $--fonts-heading;
   font-size: 48px;
   font-weight: bold;
   -webkit-background-clip: text;

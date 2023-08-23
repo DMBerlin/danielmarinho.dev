@@ -2,16 +2,16 @@
 NuxtLayout
   NuxtPage
 </template>
-<style>
+<style lang="scss">
 body {
   margin: 0;
   padding: 0;
-  background-color: #000;
+  background-color: $--colors-background;
 }
 
 body::-webkit-scrollbar {
   width: 0.35em;
-  background-color: #000;
+  background-color: $--colors-background;
 }
 
 body::-webkit-scrollbar-track {
