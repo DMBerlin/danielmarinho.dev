@@ -63,7 +63,7 @@ div.flex.flex-col.flex-grow.bg-black
         div.py-16
     div.w-auto
 </template>
-<style scoped>
+<style scoped lang="scss">
 .wrapper {
   margin: 0 auto;
   max-width: 760px;
@@ -75,9 +75,7 @@ div.flex.flex-col.flex-grow.bg-black
   font-weight: bold;
   font-size: 1.5em;
   margin: 16px 0;
-  font-family:
-    Neuzeit Grotesk Bold,
-    sans-serif;
+  font-family: $--fonts-heading;
 }
 
 .section-paragraph {
@@ -85,7 +83,7 @@ div.flex.flex-col.flex-grow.bg-black
   font-size: 16px;
   line-height: 32px;
   margin: 16px 0;
-  font-family: Biotif-Regular, sans-serif;
+  font-family: $--fonts-body;
 }
 
 .text-highlight {
@@ -98,7 +96,7 @@ div.flex.flex-col.flex-grow.bg-black
   line-height: 32px;
   color: #8f9ba8;
   text-align: left;
-  font-family: Biotif-Regular, sans-serif;
+  font-family: $--fonts-body;
 }
 
 .presentation-area {

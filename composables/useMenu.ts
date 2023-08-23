@@ -6,19 +6,25 @@ import { ItemType, UseMenu } from "~/types/useMenu";
 import { usePublicConfig } from "~/composables/usePublicConfig";
 import { PublicRuntimeConfig, UseAppStateInterface } from "~/types/useAppState";
 import { StringCommandBuffer } from "~/utils/stringCommandBuffer";
-import { useAppState } from '~/composables/useAppState';
+import { useAppState } from "~/composables/useAppState";
 
-function openWidgetState(state: Ref<UseAppStateInterface> = useAppState()): void {
+function openWidgetState(
+  state: Ref<UseAppStateInterface> = useAppState(),
+): void {
   state.value.navigation.enabled = true;
   state.value.hotkeys.enabled = false;
 }
 
-function closeWidgetState(state: Ref<UseAppStateInterface> = useAppState()): void {
+function closeWidgetState(
+  state: Ref<UseAppStateInterface> = useAppState(),
+): void {
   state.value.navigation.enabled = false;
   state.value.hotkeys.enabled = true;
 }
 
-export function useMenu(state: Ref<UseAppStateInterface> = useAppState()): Function {
+export function useMenu(
+  state: Ref<UseAppStateInterface> = useAppState(),
+): Function {
   const stringCommandBuffer: StringCommandBuffer = new StringCommandBuffer();
   const menuOptions: UseMenu[] = menuItems();
   const commands: Map<string, Function> = new Map<string, Function>();
@@ -41,7 +47,6 @@ export function useMenu(state: Ref<UseAppStateInterface> = useAppState()): Funct
     }
   }
 
-
   function handler(event: KeyboardEvent): void {
     if (
       state.value.navigation.enabled === false &&
@@ -55,8 +60,7 @@ export function useMenu(state: Ref<UseAppStateInterface> = useAppState()): Funct
     ) {
       closeWidgetState();
     } else if (event.key?.length === 1) {
-      if (state.value.hotkeys.enabled)
-        commandBusHandler(event.key);
+      if (state.value.hotkeys.enabled) commandBusHandler(event.key);
     }
   }
 
@@ -73,9 +77,7 @@ export const menuItems = (): Array<UseMenu> => {
       icon: "/static/icons/link-icon.svg",
       shortcut: ["C"],
       callback: () =>
-        clipboard
-          .write(window.location.href)
-          .then(() => closeWidgetState()),
+        clipboard.write(window.location.href).then(() => closeWidgetState()),
     },
     {
       type: ItemType.GENERAL,
@@ -83,8 +85,7 @@ export const menuItems = (): Array<UseMenu> => {
       icon: "/static/icons/email-icon.svg",
       shortcut: ["E"],
       callback: (): Promise<Window | void> =>
-        useNewTab('mailto:' + config.email)
-          .then(() => closeWidgetState()),
+        useNewTab("mailto:" + config.email).then(() => closeWidgetState()),
     },
     {
       type: ItemType.GENERAL,
@@ -92,8 +93,7 @@ export const menuItems = (): Array<UseMenu> => {
       icon: "/static/icons/code-icon.svg",
       shortcut: ["S"],
       callback: (): Promise<Window | void> =>
-        useNewTab(config.code)
-          .then(() => closeWidgetState()),
+        useNewTab(config.code).then(() => closeWidgetState()),
     },
     {
       type: ItemType.GO_TO,
@@ -101,9 +101,7 @@ export const menuItems = (): Array<UseMenu> => {
       icon: "/static/icons/home-icon.svg",
       shortcut: ["G", "H"],
       callback: (): Promise<NavigationFailure | void> =>
-        router
-          .push("/")
-          .then(() => closeWidgetState()),
+        router.push("/").then(() => closeWidgetState()),
     },
     {
       type: ItemType.GO_TO,
@@ -111,9 +109,7 @@ export const menuItems = (): Array<UseMenu> => {
       icon: "/static/icons/work-icon.svg",
       shortcut: ["G", "C"],
       callback: (): Promise<NavigationFailure | void> =>
-        router
-          .push("/career")
-          .then(() => closeWidgetState()),
+        router.push("/career").then(() => closeWidgetState()),
     },
     {
       type: ItemType.GO_TO,
@@ -121,9 +117,7 @@ export const menuItems = (): Array<UseMenu> => {
       icon: "/static/icons/projects-icon.svg",
       shortcut: ["G", "P"],
       callback: (): Promise<NavigationFailure | void> =>
-        router
-          .push("/projects")
-          .then(() => closeWidgetState()),
+        router.push("/projects").then(() => closeWidgetState()),
     },
     {
       type: ItemType.GO_TO,
@@ -131,9 +125,7 @@ export const menuItems = (): Array<UseMenu> => {
       icon: "/static/icons/profile-icon.svg",
       shortcut: ["G", "A"],
       callback: (): Promise<NavigationFailure | void> =>
-        router
-          .push("/about")
-          .then(() => closeWidgetState()),
+        router.push("/about").then(() => closeWidgetState()),
     },
   ];
 };

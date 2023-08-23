@@ -20,7 +20,7 @@ div.career-card
   div
     div.career-period {{ getTimeDifference(props.startDate, props.endDate) }}
 </template>
-<style scoped>
+<style scoped lang="scss">
 .career-card {
   margin: 32px 0;
 }
@@ -28,7 +28,7 @@ div.career-card
   font-weight: lighter;
   font-size: 16px;
   color: #8f9ba8;
-  font-family: "Fira Code", sans-serif;
+  font-family: $--fonts-body;
   margin: 0;
   line-height: 32px;
 }
@@ -37,7 +37,7 @@ div.career-card
   font-weight: normal;
   font-size: 16px;
   color: #8f9ba8;
-  font-family: "Fira Code", sans-serif;
+  font-family: $--fonts-body;
   margin: 0 8px;
   line-height: 32px;
   left: 0.4em;
@@ -46,7 +46,7 @@ div.career-card
   position: relative;
   font-size: 16px;
   color: #f1f1f1;
-  font-family: "Fira Code", sans-serif;
+  font-family: $--fonts-body;
   cursor: pointer;
   transition: all ease 0.3s;
   line-height: 32px;
@@ -65,31 +65,15 @@ div.career-card
 .career-title {
   font-size: 18px;
   color: #f1f1f1;
-  font-family: "Fira Code", sans-serif;
+  font-family: $--fonts-body;
 }
 @media screen and (max-width: 768px) {
   .career-company {
     width: 100%;
-    position: relative;
-    font-size: 16px;
-    color: #f1f1f1;
-    font-family: "Fira Code", sans-serif;
-    cursor: pointer;
-    transition: all ease 0.3s;
-    line-height: 32px;
-    border-bottom: 1px #8f9ba8 dotted;
   }
   .career-location {
-    position: relative;
     text-align: right;
     width: 100px;
-    font-weight: normal;
-    font-size: 16px;
-    color: #8f9ba8;
-    font-family: "Fira Code", sans-serif;
-    margin: 0 8px;
-    line-height: 32px;
-    left: 0.4em;
   }
 }
 </style>

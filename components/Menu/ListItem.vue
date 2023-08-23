@@ -16,7 +16,7 @@ div(@click="props.callback()").list-item
     div.shortcut-btn.flex.justify-center.items-center.mx-1
       p.text-sm.text-gray-400 {{ key }}
 </template>
-<style scoped>
+<style scoped lang="scss">
 .menu-icon {
   width: 24px;
   height: 24px;
@@ -24,9 +24,9 @@ div(@click="props.callback()").list-item
 .menu-label {
   line-height: 32px;
   font-size: 14px;
-  color: #e2e2e2;
+  color: $--colors-primary;
   font-weight: lighter;
-  font-family: Biotif-Regular, sans-serif;
+  font-family: $--fonts-body;
 }
 .shortcut-btn {
   border-radius: 4px;

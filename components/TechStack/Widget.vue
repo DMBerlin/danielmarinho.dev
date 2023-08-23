@@ -63,7 +63,7 @@ div.flex-col.justify-start.items-start.max-w-520px
   padding: 5px;
   width: 18px;
   height: 18px;
-  background-image: url("/static/icons/clear-icon.svg");
+  background-image: url("/icons/clear-icon.svg");
 }
 .v-enter-active,
 .v-leave-active {

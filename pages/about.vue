@@ -30,7 +30,7 @@ div.flex.flex-col.flex-grow.bg-black
               p <b class="text-white">Eight</b> wonderful years have been dedicated to nurturing a <b class="text-white">marriage</b> built on the foundations of <b class="text-white">love</b>, trust, and unwavering support. As I look forward, I dream of a home echoing with the joyous laughter and <b class="text-white">pitter-patter</b> of little feet. Beyond the lines of code, my <b class="text-white">aspirations</b> intertwine with visions of a bustling <b class="text-white">household</b>, a haven of <b class="text-white">boundless</b> love and <b class="text-white">imagination</b>.
               p <i>- Daniel Marinho</i>
 </template>
-<style scoped>
+<style scoped lang="scss">
 .wrapper {
   margin: 0 auto;
   max-width: 760px;
@@ -40,7 +40,7 @@ div.flex.flex-col.flex-grow.bg-black
   font-size: 16px;
   line-height: 32px;
   text-align: left;
-  font-family: Biotif-Regular, sans-serif;
+  font-family: $--fonts-body;
 }
 .text-area > p {
   color: #8f9ba8;
@@ -49,10 +49,7 @@ div.flex.flex-col.flex-grow.bg-black
 
 @media screen and (max-width: 768px) {
   .text-area {
-    font-size: 16px;
-    line-height: 32px;
     text-align: justify;
-    font-family: Biotif-Regular, sans-serif;
   }
 }
 </style>

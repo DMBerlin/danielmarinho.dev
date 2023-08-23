@@ -4,8 +4,8 @@ import { useAppState } from "~/composables/useAppState";
 import GradientTitle from "~/components/GradientTitle.vue";
 import { useIntersects, useProjects } from "~/composables/useProjects";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
-import { useTechStack } from '~/composables/useTechStack';
-import { usePublicConfig } from '~/composables/usePublicConfig';
+import { useTechStack } from "~/composables/useTechStack";
+import { usePublicConfig } from "~/composables/usePublicConfig";
 
 const config = usePublicConfig();
 
@@ -27,12 +27,12 @@ const projectFilterHandler = (project): boolean => {
 const getTechIcon = (techId: number): string => {
   const techMap = techStack.toMap();
   return techMap[techId].icon || "";
-}
+};
 
 const getTechLabel = (techId: number): string => {
   const techMap = techStack.toMap();
   return techMap[techId].label || "";
-}
+};
 
 onBeforeMount(() => useNavigationStateHandler());
 </script>
@@ -69,7 +69,7 @@ div.flex.flex-col.flex-grow.bg-black
                     span.skill-icon(:style="`background-image: url(${getTechIcon(stack)})`")
                     p.skill-label {{ getTechLabel(stack) }}
 </template>
-<style scoped>
+<style scoped lang="scss">
 .wrapper {
   margin: 0 auto;
   max-width: 760px;
@@ -80,7 +80,7 @@ div.flex.flex-col.flex-grow.bg-black
   line-height: 32px;
   color: #8f9ba8;
   text-align: left;
-  font-family: Biotif-Regular, sans-serif;
+  font-family: $--fonts-body;
 }
 .text-area > p {
   margin: 16px 16px;
@@ -90,9 +90,7 @@ div.flex.flex-col.flex-grow.bg-black
   font-weight: bold;
   font-size: 24px;
   margin: 60px 0 0;
-  font-family:
-    Neuzeit Grotesk Bold,
-    sans-serif;
+  font-family: $--fonts-heading;
 }
 .project-card {
   margin: 32px 16px;
@@ -101,7 +99,7 @@ div.flex.flex-col.flex-grow.bg-black
   font-size: 18px;
   font-weight: bold;
   color: #f1f1f1;
-  font-family: "Fira Code", sans-serif;
+  font-family: $--fonts-code;
   border-bottom: 1px #8f9ba8 dotted;
 }
 .project-description {
@@ -109,7 +107,7 @@ div.flex.flex-col.flex-grow.bg-black
   font-weight: normal;
   font-size: 16px;
   color: #8f9ba8;
-  font-family: "Fira Code", sans-serif;
+  font-family: $--fonts-body;
   line-height: 32px;
   margin: 16px 12px;
 }
@@ -132,7 +130,7 @@ div.flex.flex-col.flex-grow.bg-black
 .skill-label {
   display: flex;
   font-size: 14px;
-  font-family: Biotif-Regular, sans-serif;
+  font-family: $--fonts-body;
   padding: 5px;
   color: #8f9ba8;
 }
@@ -149,10 +147,7 @@ div.flex.flex-col.flex-grow.bg-black
 
 @media screen and (max-width: 768px) {
   .text-area {
-    font-size: 16px;
-    line-height: 32px;
     text-align: justify;
-    font-family: Biotif-Regular, sans-serif;
   }
 }
 </style>

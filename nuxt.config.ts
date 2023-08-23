@@ -6,7 +6,16 @@ import { defineNuxtConfig } from "nuxt/config";
 export default defineNuxtConfig({
   devtools: { enabled: true },
   imports: { autoImport: true },
-  css: ["~/assets/css/styles.css", "~/assets/css/colors.scss"],
+  css: ["~/assets/css/styles.css"],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: "@import '@/assets/scss/global.scss';",
+        },
+      },
+    },
+  },
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/device"],
   runtimeConfig: {
     public: {

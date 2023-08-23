@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { onBeforeMount } from "vue";
 import { useAppState } from "~/composables/useAppState";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
-import { onBeforeMount } from 'vue';
 
 const config = usePublicConfig();
 
@@ -32,20 +32,19 @@ div.flex-grow.bg-black
             div.font-bold.text-xl.keyboard-btn m
             div.font-bold.text-xl.py-2 to begin
           template(v-else)
-            div.font-bold.text-xl.py-2 Tap to start
+            div.font-semibold.text-xl.py-2 Tap to start
             span.tap-start-icon
 </template>
-<style scoped>
+<style scoped lang="scss">
 .my-name {
-  font-family: Neuzeit Grotesk Bold, sans-serif;
-  font-weight: bolder;
+  font-family: $--fonts-heading;
   font-size: 32px;
   padding: 16px 0;
+  width: auto;
 }
 
 .my-title {
-  font-family: Biotif-Regular, sans-serif;
-  font-weight: 700;
+  font-family: $--fonts-body;
   font-size: 18px;
   padding: 8px 0;
   width: auto;
