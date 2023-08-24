@@ -6,7 +6,7 @@ export enum ItemType {
 export interface UseMenu {
   type: ItemType;
   label: string;
-  icon: string;
+  icon: JSON;
   shortcut: string[];
   callback: Function;
 }
