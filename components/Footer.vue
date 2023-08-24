@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useNewTab } from "~/composables/useNewTab";
 const footerItems = useFooterItems();
 </script>
 <template lang="pug">
@@ -7,10 +8,15 @@ div.h-10
     template(v-for="item of footerItems")
       div(@click="useNewTab(item.url)").flex.items-center.justify-center.px-2.svg-icon
         p.footer-link.text-sm {{ item.label }}
-        svg(width="18px" height="18px" viewBox="0 0 35 35").mt-1.mx-2
+        svg(width="18px" height="18px" viewBox="0 0 35 35").mt-1.mx-2.footer-icon
           path(:d="item.icon")
 </template>
 <style scoped lang="scss">
+.footer-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
 .footer-link {
   font-family: $--fonts-body;
   color: $--colors-secondary;
@@ -33,7 +39,14 @@ div.h-10
   .footer-link {
     display: none;
   }
+  .footer-icon {
+    width: 24px;
+    height: 24px;
+  }
   .svg-icon {
+    display: flex;
+    align-items: center;
+    vertical-align: center;
     fill: $--colors-primary;
   }
 }
