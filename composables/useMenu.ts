@@ -7,6 +7,14 @@ import { usePublicConfig } from "~/composables/usePublicConfig";
 import { PublicRuntimeConfig, UseAppStateInterface } from "~/types/useAppState";
 import { StringCommandBuffer } from "~/utils/stringCommandBuffer";
 import { useAppState } from "~/composables/useAppState";
+import copyLinkJsonIcon from "~/public/static/icons/copy-link.json";
+import sendMailJsonIcon from "~/public/static/icons/email.json";
+import sourceCodeJsonIcon from "~/public/static/icons/source-code.json";
+import homeJsonIcon from "~/public/static/icons/home.json";
+import articleJsonIcon from "~/public/static/icons/articles.json";
+import projectJsonIcon from "~/public/static/icons/projects.json";
+import aboutJsonIcon from "~/public/static/icons/about.json";
+import { jsonfy } from '~/utils/jsonUtils';
 
 function openWidgetState(
   state: Ref<UseAppStateInterface> = useAppState(),
@@ -74,7 +82,7 @@ export const menuItems = (): Array<UseMenu> => {
     {
       type: ItemType.GENERAL,
       label: "Copy Link",
-      icon: "/static/icons/link-icon.svg",
+      icon: jsonfy(copyLinkJsonIcon),
       shortcut: ["C"],
       callback: () =>
         clipboard.write(window.location.href).then(() => closeWidgetState()),
@@ -82,7 +90,7 @@ export const menuItems = (): Array<UseMenu> => {
     {
       type: ItemType.GENERAL,
       label: "Send Email",
-      icon: "/static/icons/email-icon.svg",
+      icon: jsonfy(sendMailJsonIcon),
       shortcut: ["E"],
       callback: (): Promise<Window | void> =>
         useNewTab("mailto:" + config.email).then(() => closeWidgetState()),
@@ -90,7 +98,7 @@ export const menuItems = (): Array<UseMenu> => {
     {
       type: ItemType.GENERAL,
       label: "Source Code",
-      icon: "/static/icons/code-icon.svg",
+      icon: jsonfy(sourceCodeJsonIcon),
       shortcut: ["S"],
       callback: (): Promise<Window | void> =>
         useNewTab(config.code).then(() => closeWidgetState()),
@@ -98,7 +106,7 @@ export const menuItems = (): Array<UseMenu> => {
     {
       type: ItemType.GO_TO,
       label: "Home",
-      icon: "/static/icons/home-icon.svg",
+      icon: jsonfy(homeJsonIcon),
       shortcut: ["G", "H"],
       callback: (): Promise<NavigationFailure | void> =>
         router.push("/").then(() => closeWidgetState()),
@@ -106,7 +114,7 @@ export const menuItems = (): Array<UseMenu> => {
     {
       type: ItemType.GO_TO,
       label: "Career",
-      icon: "/static/icons/work-icon.svg",
+      icon: jsonfy(articleJsonIcon),
       shortcut: ["G", "C"],
       callback: (): Promise<NavigationFailure | void> =>
         router.push("/career").then(() => closeWidgetState()),
@@ -114,7 +122,7 @@ export const menuItems = (): Array<UseMenu> => {
     {
       type: ItemType.GO_TO,
       label: "Projects",
-      icon: "/static/icons/projects-icon.svg",
+      icon: jsonfy(projectJsonIcon),
       shortcut: ["G", "P"],
       callback: (): Promise<NavigationFailure | void> =>
         router.push("/projects").then(() => closeWidgetState()),
@@ -122,7 +130,7 @@ export const menuItems = (): Array<UseMenu> => {
     {
       type: ItemType.GO_TO,
       label: "About",
-      icon: "/static/icons/profile-icon.svg",
+      icon: jsonfy(aboutJsonIcon),
       shortcut: ["G", "A"],
       callback: (): Promise<NavigationFailure | void> =>
         router.push("/about").then(() => closeWidgetState()),

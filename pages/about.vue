@@ -3,6 +3,8 @@ import { computed, onBeforeMount } from 'vue';
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import GradientTitle from "~/components/GradientTitle.vue";
 import { getYearsOfMarriage } from '~/utils/dateUtils';
+import { useHead } from '@unhead/vue';
+import { usePublicConfig } from '~/composables/usePublicConfig';
 
 const config = usePublicConfig();
 

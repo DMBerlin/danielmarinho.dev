@@ -1,15 +1,32 @@
 <script setup lang="ts">
+import { LottieAnimation } from "lottie-web-vue";
+import { ref } from "vue";
+
 const props = defineProps<{
-  icon: string;
+  icon: JSON;
   label: string;
   shortcut: Array<string>;
   callback: Function;
 }>();
+
+const lottieRef = ref();
+const animate = () => {
+  lottieRef.value.goToAndPlay(0, true);
+};
+
 </script>
 <template lang="pug">
-div(@click="props.callback()").list-item
+div(
+  @mouseenter="animate"
+  @click="props.callback()"
+).list-item
   div.flex.justify-center.items-center
-    img(:src="props.icon").menu-icon
+    LottieAnimation(
+      :animation-data="props.icon"
+      :auto-play="false"
+      ref="lottieRef"
+      autoplay
+    ).menu-icon
   div.w-full.px-6
     span.menu-label {{ props.label }}
   template(v-for="key in props.shortcut")
