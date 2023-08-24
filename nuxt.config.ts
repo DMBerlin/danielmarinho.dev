@@ -28,6 +28,7 @@ export default defineNuxtConfig({
       instagram: process.env.INSTAGRAM_PROFILE_URL || "#",
       cvFileUrl: process.env.CV_FILE_URL || "#",
       siteAuthor: process.env.SITE_AUTHOR || "Author",
+      marriageIn: process.env.MARRIAGE_IN || Date.now().toString,
     },
   },
 }) as InputConfig<NuxtConfig, ConfigLayerMeta>;

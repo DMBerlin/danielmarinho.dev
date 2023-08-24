@@ -8,6 +8,7 @@ export interface PublicRuntimeConfig {
   instagram: string;
   cvFileUrl: string;
   siteAuthor: string;
+  marriageIn: string;
 }
 
 export interface RuntimeConfig {
