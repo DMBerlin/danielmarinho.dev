@@ -34,10 +34,15 @@ div.flex-grow
             div.font-bold.text-xl.keyboard-btn m
             div.font-bold.text-xl.py-2.cmd-label to begin
           template(v-else)
-            div.font-semibold.text-xl.py-2 Tap to start
+            div.font-semibold.text-xl.py-2.tap-to-start-label Tap to start
             span.tap-start-icon
 </template>
 <style scoped lang="scss">
+.tap-to-start-label {
+  font-family: $--fonts-body;
+  color: $--colors-primary;
+}
+
 .my-name {
   color: $--colors-primary;
   font-family: $--fonts-heading;
