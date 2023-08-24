@@ -6,6 +6,7 @@ import { useIntersects, useProjects } from "~/composables/useProjects";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import { useTechStack } from "~/composables/useTechStack";
 import { usePublicConfig } from "~/composables/usePublicConfig";
+import { useHead } from "@unhead/vue";
 
 const config = usePublicConfig();
 

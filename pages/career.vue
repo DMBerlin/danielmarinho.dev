@@ -7,8 +7,11 @@ import RegularButton from "~/components/RegularButton.vue";
 import { useExperiences } from "~/composables/useExperiences";
 import { usePublicConfig } from "~/composables/usePublicConfig";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
+import { useHead } from '@unhead/vue';
 
 const config = usePublicConfig();
+
+const quoteText = ref("Computer scientist with a 4-year Brazilian bachelor's degree and 8+ years of software engineering experience. Expert in problem-solving throughout the software development life cycle. Enthusiastic, team-oriented, and committed to creating exceptional user experiences through collaboration and continuous learning.");
 
 useHead({
   title: "Career // " + config.siteAuthor,
@@ -43,9 +46,9 @@ div.flex.flex-col.flex-grow
         p.section-title Bio
         p.section-paragraph Here you can find a little bit of my professional background and companies I worked for.
       section
-        TextQuote(quote="Computer scientist with a 4-year Brazilian bachelor's degree and 8+ years of software engineering experience. Expert in problem-solving throughout the software development life cycle. Enthusiastic, team-oriented, and committed to creating exceptional user experiences through collaboration and continuous learning.")
+        TextQuote(:quote="quoteText")
       section.flex.justify-end.items-end
-        RegularButton(icon="/static/icons/copy-icon.svg" ald="Download" label="Copy Bio")
+        RegularButton(@click="" icon="/static/icons/copy-icon.svg" ald="Copy Bio" label="Copy Bio")
         p.text-gray-400.text-xl.mx-4.pb-2  •
         RegularButton(@click="downloadResume" icon="/static/icons/download-icon.svg" ald="Download" label="Download Resumé")
       section

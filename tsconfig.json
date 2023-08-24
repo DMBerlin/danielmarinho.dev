@@ -25,7 +25,8 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "target": "es2017",
-    "module": "commonjs"
+    "module": "commonjs",
+    "resolveJsonModule": true,
   },
   "vueCompilerOptions": {
     "plugins": ["@vue/language-plugin-pug"]
