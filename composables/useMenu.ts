@@ -7,13 +7,13 @@ import { usePublicConfig } from "~/composables/usePublicConfig";
 import { PublicRuntimeConfig, UseAppStateInterface } from "~/types/useAppState";
 import { StringCommandBuffer } from "~/utils/stringCommandBuffer";
 import { useAppState } from "~/composables/useAppState";
-import copyLinkJsonIcon from "~/public/static/icons/copy-link.json";
-import sendMailJsonIcon from "~/public/static/icons/email.json";
-import sourceCodeJsonIcon from "~/public/static/icons/source-code.json";
-import homeJsonIcon from "~/public/static/icons/home.json";
-import articleJsonIcon from "~/public/static/icons/articles.json";
-import projectJsonIcon from "~/public/static/icons/projects.json";
-import aboutJsonIcon from "~/public/static/icons/about.json";
+import copyLinkJsonIcon from "public/static/lotties/copy-link.json";
+import sendMailJsonIcon from "public/static/lotties/email.json";
+import sourceCodeJsonIcon from "public/static/lotties/source-code.json";
+import homeJsonIcon from "public/static/lotties/home.json";
+import articleJsonIcon from "public/static/lotties/articles.json";
+import projectJsonIcon from "public/static/lotties/projects.json";
+import aboutJsonIcon from "public/static/lotties/about.json";
 import { jsonfy } from '~/utils/jsonUtils';
 
 function openWidgetState(
