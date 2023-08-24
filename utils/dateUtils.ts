@@ -53,3 +53,25 @@ export function getTimeDifference(from: Date, to: Date): string {
 
   return result.trim();
 }
+
+/**
+ * @description Receive two dates as Date and return its difference in years.
+ * @param {string} date
+ * @returns string
+ * @example getDifferenceInYears(new Date("2016-10-22"), new Date("2023-08-24")) should return 6.
+ */
+export function getYearsOfMarriage(date: string): string {
+  // Calculate the time difference in milliseconds
+  const from: Date = new Date(date);
+  const to: Date = new Date();
+  if (isNaN(new Date(date).getMilliseconds())) {
+    console.error("Error parsing years of marriage. Have you passed the right date format?");
+    return "0";
+  }
+  const timeDiff: number = to.getTime() - from.getTime();
+  // Convert milliseconds to years
+  const millisecondsPerYear: number = 1000 * 60 * 60 * 24 * 365.25; // Account for leap years
+  const years: number = Math.floor(timeDiff / millisecondsPerYear);
+  // Return the years in string
+  return years.toString();
+}
