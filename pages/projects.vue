@@ -78,7 +78,7 @@ div.flex.flex-col.flex-grow
 .text-area {
   font-size: 16px;
   line-height: 32px;
-  color: #8f9ba8;
+  color: $--colors-secondary;
   text-align: left;
   font-family: $--fonts-body;
 }
@@ -86,7 +86,7 @@ div.flex.flex-col.flex-grow
   margin: 16px 16px;
 }
 .section-title {
-  color: #f2f2f2;
+  color: $--colors-primary;
   font-weight: bold;
   font-size: 24px;
   margin: 60px 0 0;
@@ -98,15 +98,15 @@ div.flex.flex-col.flex-grow
 .project-title {
   font-size: 18px;
   font-weight: bold;
-  color: #f1f1f1;
+  color: $--colors-primary;
   font-family: $--fonts-code;
-  border-bottom: 1px #8f9ba8 dotted;
+  border-bottom: 1px dotted $--colors-secondary;
 }
 .project-description {
   position: relative;
   font-weight: normal;
   font-size: 16px;
-  color: #8f9ba8;
+  color: $--colors-secondary;
   font-family: $--fonts-body;
   line-height: 32px;
   margin: 16px 12px;
@@ -132,7 +132,7 @@ div.flex.flex-col.flex-grow
   font-size: 14px;
   font-family: $--fonts-body;
   padding: 5px;
-  color: #8f9ba8;
+  color: $--colors-secondary;
 }
 .skill-card {
   height: 100%;
@@ -142,7 +142,7 @@ div.flex.flex-col.flex-grow
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  background-color: #08070b;
+  background-color: transparent;
 }
 
 @media screen and (max-width: 768px) {

@@ -14,11 +14,11 @@ input(
   autofocus
 ).rounded-lg.w-full.bg-transparent.border-none.select-none.outline-none.font-bold.text-lg.search-input
 </template>
-<style scoped>
+<style scoped lang="scss">
 .search-input {
-  color: #e2e2e2;
   font-weight: lighter;
-  font-family: Biotif-Regular, sans-serif;
+  color: $--colors-command;
+  font-family: $--fonts-body;
 }
 input[type="text"] {
   padding: 10px 15px;

@@ -43,7 +43,7 @@ div.flex.flex-col.flex-grow
   font-family: $--fonts-body;
 }
 .text-area > p {
-  color: #8f9ba8;
+  color: $--colors-secondary;
   margin: 16px 16px;
 }
 

@@ -29,21 +29,21 @@ nuxt-link(:to="props.path")
   border-radius: 4px;
 }
 .selected {
-  color: #f1f1f1;
+  color: $--colors-primary;
 }
 .default {
-  color: #505050;
+  color: $--colors-secondary;
 }
 .menu:hover {
   cursor: pointer;
-  color: #e2e2e2;
-  background-color: #303030;
+  color: $--colors-primary;
+  background-color: $--colors-hover;
 }
 .underline {
   display: flex;
   transition: all 0.3s ease;
-  background-color: #f1f1f1;
-  border-bottom: solid #f1f1f1 1px;
+  background-color: $--colors-primary;
+  border-bottom: $--colors-primary 1px solid;
 }
 .underline-selected {
   width: 16px;

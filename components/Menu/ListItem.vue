@@ -22,20 +22,18 @@ div(@click="props.callback()").list-item
   height: 24px;
 }
 .menu-label {
+  margin: 0;
   line-height: 32px;
-  font-size: 14px;
-  color: $--colors-primary;
-  font-weight: lighter;
+  font-size: 16px;
+  color: $--colors-secondary;
   font-family: $--fonts-body;
 }
 .shortcut-btn {
   border-radius: 4px;
-  background-color: #505050;
-  color: #e2e2e2;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: $--colors-primary;
   border: none;
-  width: 35px;
-  height: 35px;
-  text-align-all: center;
+  padding: 4px 8px;
 }
 .list-item {
   display: flex;
