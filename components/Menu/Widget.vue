@@ -53,14 +53,14 @@ div(@click.self="hideNavigation").bg.flex.justify-center.items-center
           @click="hideNavigation"
         ).border-bottom
 </template>
-<style scoped>
+<style scoped lang="scss">
 .section-title {
-  padding: 8px 16px;
+  padding: 8px 8px;
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #f1f1f1;
-  font-family: "Biotif", sans-serif;
+  color: $--colors-primary;
+  font-family: $--fonts-body;
   font-weight: lighter;
 }
 .bg {
@@ -78,10 +78,9 @@ div(@click.self="hideNavigation").bg.flex.justify-center.items-center
   width: 600px;
   height: 440px;
   border-radius: 8px;
-  background-color: #303030;
 }
 .border-bottom {
-  border-bottom: #18181b 1px solid;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 .mirror {
   border-radius: 8px;
@@ -130,4 +129,3 @@ div(@click.self="hideNavigation").bg.flex.justify-center.items-center
   }
 }
 </style>
-../composables/useMenu../composables/useState

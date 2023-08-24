@@ -17,26 +17,27 @@ const openMenu = () => {
 onBeforeMount(() => useNavigationStateHandler());
 </script>
 <template lang="pug">
-div.flex-grow.bg-black
+div.flex-grow
   div.height-to
     div.card
-      div.text-gray-300.max-w-960px
+      div.max-w-960px
         p.my-name Daniel Marinho
         p.my-title Software Development Engineer, CS B.Sc.
         p.my-label Passioned about Web Technology.
         div(@click="openMenu").flex.justify-center.items-center.h-3px.my-8.cursor-pointer.shortcut-btn
           template(v-if="isWindows")
-            div.font-bold.text-xl.py-2 Press
+            div.font-bold.text-xl.cmd-label Press
             div.font-bold.text-xl.keyboard-btn ctrl
-            div.font-bold.text-xl.py-2 +
+            div.font-bold.text-xl.py-2.cmd-label +
             div.font-bold.text-xl.keyboard-btn m
-            div.font-bold.text-xl.py-2 to begin
+            div.font-bold.text-xl.py-2.cmd-label to begin
           template(v-else)
             div.font-semibold.text-xl.py-2 Tap to start
             span.tap-start-icon
 </template>
 <style scoped lang="scss">
 .my-name {
+  color: $--colors-primary;
   font-family: $--fonts-heading;
   font-size: 32px;
   padding: 16px 0;
@@ -44,6 +45,7 @@ div.flex-grow.bg-black
 }
 
 .my-title {
+  color: $--colors-primary;
   font-family: $--fonts-body;
   font-size: 18px;
   padding: 8px 0;
@@ -51,7 +53,8 @@ div.flex-grow.bg-black
 }
 
 .my-label {
-  color: #8f9ba8;
+  color: $--colors-primary;
+  color: $--colors-secondary;
   font-size: 16px;
   padding: 8px 0;
   font-weight: 400;
@@ -82,10 +85,15 @@ div.flex-grow.bg-black
   justify-content: center;
 }
 
+.cmd-label {
+  color: $--colors-primary;
+  font-family: $--fonts-body;
+}
+
 .keyboard-btn {
   display: block;
-  background-color: #e2e2e2;
-  color: #18181b;
+  background-color: $--colors-secondary;
+  color: $--colors-background;
   border-radius: 4px;
   padding: 8px 8px;
   margin: 0 8px;
@@ -100,7 +108,7 @@ div.flex-grow.bg-black
 }
 
 .shortcut-btn:hover {
-  background-color: #303030;
+  background-color: $--colors-hover;
 }
 
 @media screen and (max-width: 768px) {

@@ -8,10 +8,10 @@ div.flex.justify-center.items-center
   div.blockquote.w-full
     p {{ props.quote }}
 </template>
-<style scoped>
+<style scoped lang="scss">
 .blockquote {
   display: flex;
-  border-left: solid 6px #212024;
+  border-left: solid 6px $--colors-hover;
   padding: 4px 0 4px 32px;
   margin: 16px 0;
   text-align: justify;
@@ -22,6 +22,6 @@ div.flex.justify-center.items-center
   font-weight: normal;
   font-size: 16px;
   line-height: 32px;
-  color: #8f9ba8;
+  color: $--colors-secondary;
 }
 </style>

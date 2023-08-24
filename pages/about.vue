@@ -12,7 +12,7 @@ useHead({
 onBeforeMount(() => useNavigationStateHandler());
 </script>
 <template lang="pug">
-div.flex.flex-col.flex-grow.bg-black
+div.flex.flex-col.flex-grow
   div.flex.justify-center.items-center
     div.wrapper
       section
@@ -43,7 +43,7 @@ div.flex.flex-col.flex-grow.bg-black
   font-family: $--fonts-body;
 }
 .text-area > p {
-  color: #8f9ba8;
+  color: $--colors-secondary;
   margin: 16px 16px;
 }
 

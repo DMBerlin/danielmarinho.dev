@@ -27,7 +27,7 @@ div.career-card
 .career-period {
   font-weight: lighter;
   font-size: 16px;
-  color: #8f9ba8;
+  color: $--colors-secondary;
   font-family: $--fonts-body;
   margin: 0;
   line-height: 32px;
@@ -36,7 +36,7 @@ div.career-card
   position: relative;
   font-weight: normal;
   font-size: 16px;
-  color: #8f9ba8;
+  color: $--colors-secondary;
   font-family: $--fonts-body;
   margin: 0 8px;
   line-height: 32px;
@@ -45,26 +45,26 @@ div.career-card
 .career-company {
   position: relative;
   font-size: 16px;
-  color: #f1f1f1;
+  color: $--colors-primary;
   font-family: $--fonts-body;
   cursor: pointer;
   transition: all ease 0.3s;
   line-height: 32px;
-  border-bottom: 1px #8f9ba8 dotted;
+  border-bottom: $--colors-secondary 1px dotted;
 }
 .career-company::after {
-  color: #8f9ba8;
+  color: $--colors-secondary;
   content: "•";
   position: absolute;
   top: 0;
   right: -0.7em;
 }
 .career-company:hover {
-  color: #8f9ba8;
+  color: $--colors-secondary;
 }
 .career-title {
   font-size: 18px;
-  color: #f1f1f1;
+  color: $--colors-primary;
   font-family: $--fonts-body;
 }
 @media screen and (max-width: 768px) {

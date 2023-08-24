@@ -20,11 +20,11 @@ div.programming-card.flex-row.items-center.justify-around.mx-1(@click="updateSki
   div.programming-icon(:style="programmingIcon")
   p.programming-label {{ props.label }}
 </template>
-<style scoped>
+<style scoped lang="scss">
 .programming-label {
   display: flex;
   font-size: 14px;
-  font-family: Biotif-Regular, sans-serif;
+  font-family: $--fonts-body;
   padding: 5px;
 }
 .programming-card {
@@ -38,7 +38,7 @@ div.programming-card.flex-row.items-center.justify-around.mx-1(@click="updateSki
 }
 .programming-card:hover {
   cursor: pointer;
-  background-color: #212024;
+  background-color: $--colors-hover;
 }
 .programming-icon {
   display: flex;
@@ -48,11 +48,11 @@ div.programming-card.flex-row.items-center.justify-around.mx-1(@click="updateSki
   height: 18px;
 }
 .programming-card-selected {
-  color: #fff;
-  background-color: #212024;
+  color: $--colors-primary;
+  background-color: $--colors-hover;
 }
 .programming-card-default {
-  color: #8f9ba8;
+  color: $--colors-secondary;
   background-color: transparent;
 }
 </style>

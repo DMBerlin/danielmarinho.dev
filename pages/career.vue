@@ -20,7 +20,7 @@ const downloadResume = ref(() => useNewTab(cvFileUrl));
 onBeforeMount(() => useNavigationStateHandler());
 </script>
 <template lang="pug">
-div.flex.flex-col.flex-grow.bg-black
+div.flex.flex-col.flex-grow
   div.flex.justify-center.items-center
     div.wrapper
       section
@@ -71,7 +71,7 @@ div.flex.flex-col.flex-grow.bg-black
 }
 
 .section-title {
-  color: #f2f2f2;
+  color: $--colors-primary;
   font-weight: bold;
   font-size: 1.5em;
   margin: 16px 0;
@@ -79,7 +79,7 @@ div.flex.flex-col.flex-grow.bg-black
 }
 
 .section-paragraph {
-  color: #8f9ba8;
+  color: $--colors-secondary;
   font-size: 16px;
   line-height: 32px;
   margin: 16px 0;
@@ -87,14 +87,14 @@ div.flex.flex-col.flex-grow.bg-black
 }
 
 .text-highlight {
-  color: #f1f1f1;
+  color: $--colors-primary;
   font-weight: bold;
 }
 
 .text-area {
   font-size: 16px;
   line-height: 32px;
-  color: #8f9ba8;
+  color: $--colors-secondary;
   text-align: left;
   font-family: $--fonts-body;
 }

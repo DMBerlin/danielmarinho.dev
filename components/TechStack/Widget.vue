@@ -26,7 +26,7 @@ div.flex-col.justify-start.items-start.max-w-520px
           div.clear-icon
           p.clear-label Clear All
 </template>
-<style scoped>
+<style scoped lang="scss">
 .carrousel {
   display: inline-flex;
   align-items: flex-start;
@@ -45,25 +45,25 @@ div.flex-col.justify-start.items-start.max-w-520px
   margin: 8px;
   transition: all ease 0.3s;
   border-radius: 6px;
-  border: solid 2px #212024;
+  border: solid 2px $--colors-hover;
 }
 .clear-btn:hover {
   cursor: pointer;
-  background-color: #212024;
+  background-color: $--colors-hover;
 }
 .clear-label {
   display: flex;
   font-size: 14px;
-  font-family: Biotif-Regular, sans-serif;
+  font-family: $--fonts-body;
   padding: 5px;
-  color: #8f9ba8;
+  color: $--colors-secondary;
 }
 .clear-icon {
   display: flex;
   padding: 5px;
   width: 18px;
   height: 18px;
-  background-image: url("/icons/clear-icon.svg");
+  background-image: url("/static/icons/clear-icon.svg");
 }
 .v-enter-active,
 .v-leave-active {
