@@ -17,7 +17,7 @@ const openMenu = () => {
 onBeforeMount(() => useNavigationStateHandler());
 </script>
 <template lang="pug">
-div.flex-grow.bg-black
+div.flex-grow
   div.height-to
     div.card
       div.text-gray-300.max-w-960px

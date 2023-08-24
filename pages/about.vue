@@ -12,7 +12,7 @@ useHead({
 onBeforeMount(() => useNavigationStateHandler());
 </script>
 <template lang="pug">
-div.flex.flex-col.flex-grow.bg-black
+div.flex.flex-col.flex-grow
   div.flex.justify-center.items-center
     div.wrapper
       section
