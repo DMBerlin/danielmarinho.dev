@@ -5,10 +5,15 @@ import TextQuote from "~/components/TextQuote.vue";
 import { useNewTab } from "~/composables/useNewTab";
 import GradientTitle from "~/components/GradientTitle.vue";
 import RegularButton from "~/components/RegularButton.vue";
+import ReactiveButton from "~/components/ReactiveButton.vue";
+import CareerExperienceCard from "~/components/Career/ExperienceCard.vue";
 import { useExperiences } from "~/composables/useExperiences";
 import { usePublicConfig } from "~/composables/usePublicConfig";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
-import clipboard from 'clipboardy';
+import copyPasteIcon from "~/public/static/lotties/copy-bio.json";
+import downloadIcon from "~/public/static/lotties/download.json";
+import successIcon from "~/public/static/lotties/success.json";
+import clipboard from "clipboardy";
 
 const config = usePublicConfig();
 
@@ -52,9 +57,9 @@ div.flex.flex-col.flex-grow
       section
         TextQuote(:quote="quoteText")
       section.flex.justify-end.items-end
-        RegularButton(@click="copyBio" icon="/static/icons/copy-icon.svg" ald="Copy Bio" label="Copy Bio")
+        ReactiveButton(:callback="copyBio" :icon="copyPasteIcon" :on-click-icon="successIcon" ald="Copy Bio" label="Copy Bio")
         p.text-gray-400.text-xl.mx-4.pb-2  •
-        RegularButton(@click="downloadResume" icon="/static/icons/download-icon.svg" ald="Download" label="Download Resumé")
+        RegularButton(@click="downloadResume" :icon="downloadIcon" ald="Download" label="Download Resumé")
       section
         p.section-title Career
         template(v-for="experience in experiences")
@@ -71,12 +76,23 @@ div.flex.flex-col.flex-grow
     div.w-auto
 </template>
 <style scoped lang="scss">
+.lottie-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 134px;
+  height: 44px;
+}
+.lottie-icon {
+  display: flex;
+  width: 26px;
+  height: 26px;
+}
 .wrapper {
   margin: 0 auto;
   max-width: 760px;
   padding: 0 20px;
 }
-
 .section-title {
   color: $--colors-primary;
   font-weight: bold;
@@ -84,7 +100,6 @@ div.flex.flex-col.flex-grow
   margin: 16px 0;
   font-family: $--fonts-heading;
 }
-
 .section-paragraph {
   color: $--colors-secondary;
   font-size: 16px;
@@ -92,12 +107,10 @@ div.flex.flex-col.flex-grow
   margin: 16px 0;
   font-family: $--fonts-body;
 }
-
 .text-highlight {
   color: $--colors-primary;
   font-weight: bold;
 }
-
 .text-area {
   font-size: 16px;
   line-height: 32px;
@@ -105,12 +118,10 @@ div.flex.flex-col.flex-grow
   text-align: left;
   font-family: $--fonts-body;
 }
-
 .presentation-area {
   display: flex;
   justify-content: center;
 }
-
 .profile-pic {
   width: 18em;
   height: 18em;
