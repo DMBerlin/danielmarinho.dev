@@ -57,7 +57,7 @@ div.flex.flex-col.flex-grow
       section
         TextQuote(:quote="quoteText")
       section.flex.justify-end.items-end
-        ReactiveButton(:callback="copyBio" :icon="copyPasteIcon" :on-click-icon="successIcon" ald="Copy Bio" label="Copy Bio")
+        ReactiveButton(:callback="copyBio" :icon="copyPasteIcon" :on-click-icon="successIcon" :reactive-anim-time="2020" ald="Copy Bio" label="Copy Bio")
         p.text-gray-400.text-xl.mx-4.pb-2  •
         RegularButton(@click="downloadResume" :icon="downloadIcon" ald="Download" label="Download Resumé")
       section

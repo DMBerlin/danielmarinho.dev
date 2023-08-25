@@ -5,6 +5,7 @@ const props = defineProps<{
   icon: JSON;
   label: string;
   onClickIcon: JSON;
+  reactiveAnimTime?: number;
   alt?: string;
   callback?: Function;
 }>();
@@ -20,7 +21,7 @@ const onClickHandler = () => {
   activeState.value = true;
   lottieActionIconRef.value.goToAndPlay(0);
   props.callback();
-  setTimeout(() => activeState.value = false, 2020);
+  setTimeout(() => activeState.value = false, props.reactiveAnimTime || 0);
 }
 </script>
 <template lang="pug">
