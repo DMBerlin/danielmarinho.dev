@@ -48,6 +48,7 @@ The basic file structure for the project is organized in the following way:
 |-- composables
 |-- layouts
 |-- pages
+|-- plugins
 |-- public
 |-- server
 |-- types
@@ -73,6 +74,10 @@ Here you'll find default templates used on the project.
 ### [pages](https://github.com/DMBerlin/danielmarinho.dev/pages)
 
 Here you'll find a set of pages used on the routes.
+
+### [plugins](https://github.com/DMBerlin/danielmarinho.dev/plugins)
+
+Here you'll find pluggins installed on the project.
 
 ### [public](https://github.com/DMBerlin/danielmarinho.dev/public)
 
