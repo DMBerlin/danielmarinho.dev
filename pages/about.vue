@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed, onBeforeMount } from 'vue';
+import { computed, onBeforeMount } from "vue";
+import { useHead } from "@unhead/vue";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import GradientTitle from "~/components/GradientTitle.vue";
-import { getYearsOfMarriage } from '~/utils/dateUtils';
-import { useHead } from '@unhead/vue';
-import { usePublicConfig } from '~/composables/usePublicConfig';
+import { getYearsOfMarriage } from "~/utils/dateUtils";
+import { usePublicConfig } from "~/composables/usePublicConfig";
 
 const config = usePublicConfig();
 

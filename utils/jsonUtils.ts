@@ -3,6 +3,6 @@
  * @param {Object} data
  * @return JSON
  */
-export function jsonfy (data: Object): JSON {
+export function jsonfy(data: Object): JSON {
   return JSON.parse(JSON.stringify(data));
 }

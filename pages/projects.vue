@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { onBeforeMount, ref } from "vue";
+import { useHead } from "@unhead/vue";
 import { useAppState } from "~/composables/useAppState";
 import GradientTitle from "~/components/GradientTitle.vue";
 import { useIntersects, useProjects } from "~/composables/useProjects";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import { useTechStack } from "~/composables/useTechStack";
 import { usePublicConfig } from "~/composables/usePublicConfig";
-import { useHead } from "@unhead/vue";
 
 const config = usePublicConfig();
 
