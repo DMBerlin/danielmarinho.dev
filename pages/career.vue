@@ -8,6 +8,7 @@ import RegularButton from "~/components/RegularButton.vue";
 import { useExperiences } from "~/composables/useExperiences";
 import { usePublicConfig } from "~/composables/usePublicConfig";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
+import clipboard from 'clipboardy';
 
 const config = usePublicConfig();
 
@@ -22,6 +23,7 @@ useHead({
 const { cvFileUrl } = usePublicConfig();
 const experiences = await useExperiences();
 const downloadResume = ref(() => useNewTab(cvFileUrl));
+const copyBio = () => clipboard.write(quoteText.value);
 onBeforeMount(() => useNavigationStateHandler());
 </script>
 <template lang="pug">
@@ -50,7 +52,7 @@ div.flex.flex-col.flex-grow
       section
         TextQuote(:quote="quoteText")
       section.flex.justify-end.items-end
-        RegularButton(@click="" icon="/static/icons/copy-icon.svg" ald="Copy Bio" label="Copy Bio")
+        RegularButton(@click="copyBio" icon="/static/icons/copy-icon.svg" ald="Copy Bio" label="Copy Bio")
         p.text-gray-400.text-xl.mx-4.pb-2  •
         RegularButton(@click="downloadResume" icon="/static/icons/download-icon.svg" ald="Download" label="Download Resumé")
       section
