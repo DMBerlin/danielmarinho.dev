@@ -128,4 +128,10 @@ div(@click.self="hideNavigation").bg.flex.justify-center.items-center
     transform: scale(1);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .modal {
+    width: auto;
+  }
+}
 </style>
