@@ -11,7 +11,6 @@ input(
   placeholder="Search a command"
   v-model="inputText"
   @keyup="handleInput"
-  autofocus
 ).rounded-lg.w-full.bg-transparent.border-none.select-none.outline-none.font-bold.text-lg.search-input
 </template>
 <style scoped lang="scss">

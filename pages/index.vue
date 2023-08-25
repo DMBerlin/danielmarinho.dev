@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onBeforeMount } from "vue";
+import { useHead } from "@unhead/vue";
 import { useAppState } from "~/composables/useAppState";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
-import { useHead } from '@unhead/vue';
-import { usePublicConfig } from '~/composables/usePublicConfig';
+import { usePublicConfig } from "~/composables/usePublicConfig";
 
 const config = usePublicConfig();
 
