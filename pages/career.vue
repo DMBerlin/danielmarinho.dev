@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onBeforeMount, ref } from "vue";
+import { useHead } from "@unhead/vue";
 import TextQuote from "~/components/TextQuote.vue";
 import { useNewTab } from "~/composables/useNewTab";
 import GradientTitle from "~/components/GradientTitle.vue";
@@ -7,11 +8,12 @@ import RegularButton from "~/components/RegularButton.vue";
 import { useExperiences } from "~/composables/useExperiences";
 import { usePublicConfig } from "~/composables/usePublicConfig";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
-import { useHead } from '@unhead/vue';
 
 const config = usePublicConfig();
 
-const quoteText = ref("Computer scientist with a 4-year Brazilian bachelor's degree and 8+ years of software engineering experience. Expert in problem-solving throughout the software development life cycle. Enthusiastic, team-oriented, and committed to creating exceptional user experiences through collaboration and continuous learning.");
+const quoteText = ref(
+  "Computer scientist with a 4-year Brazilian bachelor's degree and 8+ years of software engineering experience. Expert in problem-solving throughout the software development life cycle. Enthusiastic, team-oriented, and committed to creating exceptional user experiences through collaboration and continuous learning.",
+);
 
 useHead({
   title: "Career // " + config.siteAuthor,

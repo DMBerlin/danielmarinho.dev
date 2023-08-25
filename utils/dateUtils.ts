@@ -65,7 +65,9 @@ export function getYearsOfMarriage(date: string): string {
   const from: Date = new Date(date);
   const to: Date = new Date();
   if (isNaN(new Date(date).getMilliseconds())) {
-    console.error("Error parsing years of marriage. Have you passed the right date format?");
+    console.error(
+      "Error parsing years of marriage. Have you passed the right date format?",
+    );
     return "0";
   }
   const timeDiff: number = to.getTime() - from.getTime();

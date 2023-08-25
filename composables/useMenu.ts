@@ -14,7 +14,7 @@ import homeJsonIcon from "public/static/lotties/home.json";
 import articleJsonIcon from "public/static/lotties/articles.json";
 import projectJsonIcon from "public/static/lotties/projects.json";
 import aboutJsonIcon from "public/static/lotties/about.json";
-import { jsonfy } from '~/utils/jsonUtils';
+import { jsonfy } from "~/utils/jsonUtils";
 
 function openWidgetState(
   state: Ref<UseAppStateInterface> = useAppState(),
