@@ -1,19 +1,21 @@
 <script setup lang="ts">
-import { onBeforeMount, ref } from "vue";
-import { useHead } from "@unhead/vue";
-import TextQuote from "~/components/TextQuote.vue";
-import { useNewTab } from "~/composables/useNewTab";
-import GradientTitle from "~/components/GradientTitle.vue";
-import RegularButton from "~/components/RegularButton.vue";
-import ReactiveButton from "~/components/ReactiveButton.vue";
-import CareerExperienceCard from "~/components/Career/ExperienceCard.vue";
-import { useExperiences } from "~/composables/useExperiences";
-import { usePublicConfig } from "~/composables/usePublicConfig";
-import { useNavigationStateHandler } from "~/composables/useNavigation";
-import copyPasteIcon from "~/public/static/lotties/copy-bio.json";
-import downloadIcon from "~/public/static/lotties/download.json";
-import successIcon from "~/public/static/lotties/success.json";
-import clipboard from "clipboardy";
+import { onBeforeMount, ref } from 'vue';
+import { useHead } from '@unhead/vue';
+import TextQuote from '~/components/TextQuote.vue';
+import { useNewTab } from '~/composables/useNewTab';
+import GradientTitle from '~/components/GradientTitle.vue';
+import RegularButton from '~/components/RegularButton.vue';
+import ReactiveButton from '~/components/ReactiveButton.vue';
+import CareerExperienceCard from '~/components/Career/ExperienceCard.vue';
+import { useExperiences } from '~/composables/useExperiences';
+import { usePublicConfig } from '~/composables/usePublicConfig';
+import { useNavigationStateHandler } from '~/composables/useNavigation';
+import copyPasteIcon from '~/public/static/lotties/copy-bio.json';
+import downloadIcon from '~/public/static/lotties/download.json';
+import successIcon from '~/public/static/lotties/success.json';
+import clipboard from 'clipboardy';
+import { useLogEvent } from '~/composables/useLogEvent';
+import { EventNames } from '~/types/useLogEvent';
 
 const config = usePublicConfig();
 
@@ -25,10 +27,17 @@ useHead({
   title: "Career // " + config.siteAuthor,
 });
 
+const logEvent = useLogEvent();
 const { cvFileUrl } = usePublicConfig();
 const experiences = await useExperiences();
-const downloadResume = ref(() => useNewTab(cvFileUrl));
-const copyBio = () => clipboard.write(quoteText.value);
+const downloadResume = ref(() => {
+  logEvent.emit(EventNames.RESUME_DOWNLOADED);
+  useNewTab(cvFileUrl);
+});
+const copyBio = ref(() => {
+  logEvent.emit(EventNames.BIO_COPIED);
+  clipboard.write(quoteText.value);
+});
 onBeforeMount(() => useNavigationStateHandler());
 </script>
 <template lang="pug">
