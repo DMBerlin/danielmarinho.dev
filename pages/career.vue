@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { onBeforeMount, ref } from 'vue';
-import { useHead } from '@unhead/vue';
-import TextQuote from '~/components/TextQuote.vue';
-import { useNewTab } from '~/composables/useNewTab';
-import GradientTitle from '~/components/GradientTitle.vue';
-import RegularButton from '~/components/RegularButton.vue';
-import ReactiveButton from '~/components/ReactiveButton.vue';
-import CareerExperienceCard from '~/components/Career/ExperienceCard.vue';
-import { useExperiences } from '~/composables/useExperiences';
-import { usePublicConfig } from '~/composables/usePublicConfig';
-import { useNavigationStateHandler } from '~/composables/useNavigation';
-import copyPasteIcon from '~/public/static/lotties/copy-bio.json';
-import downloadIcon from '~/public/static/lotties/download.json';
-import successIcon from '~/public/static/lotties/success.json';
-import clipboard from 'clipboardy';
-import { useLogEvent } from '~/composables/useLogEvent';
-import { EventNames } from '~/types/useLogEvent';
+import { onBeforeMount, ref } from "vue";
+import { useHead } from "@unhead/vue";
+import clipboard from "clipboardy";
+import TextQuote from "~/components/TextQuote.vue";
+import { useNewTab } from "~/composables/useNewTab";
+import GradientTitle from "~/components/GradientTitle.vue";
+import RegularButton from "~/components/RegularButton.vue";
+import ReactiveButton from "~/components/ReactiveButton.vue";
+import CareerExperienceCard from "~/components/Career/ExperienceCard.vue";
+import { useExperiences } from "~/composables/useExperiences";
+import { usePublicConfig } from "~/composables/usePublicConfig";
+import { useNavigationStateHandler } from "~/composables/useNavigation";
+import copyPasteIcon from "~/public/static/lotties/copy-bio.json";
+import downloadIcon from "~/public/static/lotties/download.json";
+import successIcon from "~/public/static/lotties/success.json";
+import { useLogEvent } from "~/composables/useLogEvent";
+import { EventNames } from "~/types/useLogEvent";
 
 const config = usePublicConfig();
 

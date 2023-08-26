@@ -2,7 +2,7 @@ import { NavigationFailure, Router, useRouter } from "vue-router";
 import { Ref } from "vue";
 import clipboard from "clipboardy";
 import { useNewTab } from "~/composables/useNewTab";
-import { ItemType, MenuItemEnums, UseMenu } from '~/types/useMenu';
+import { ItemType, MenuItemEnums, UseMenu } from "~/types/useMenu";
 import { usePublicConfig } from "~/composables/usePublicConfig";
 import { PublicRuntimeConfig, UseAppStateInterface } from "~/types/useAppState";
 import { StringCommandBuffer } from "~/utils/stringCommandBuffer";
