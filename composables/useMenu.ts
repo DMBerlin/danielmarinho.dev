@@ -2,7 +2,7 @@ import { NavigationFailure, Router, useRouter } from "vue-router";
 import { Ref } from "vue";
 import clipboard from "clipboardy";
 import { useNewTab } from "~/composables/useNewTab";
-import { ItemType, UseMenu } from "~/types/useMenu";
+import { ItemType, MenuItemEnums, UseMenu } from "~/types/useMenu";
 import { usePublicConfig } from "~/composables/usePublicConfig";
 import { PublicRuntimeConfig, UseAppStateInterface } from "~/types/useAppState";
 import { StringCommandBuffer } from "~/utils/stringCommandBuffer";
@@ -81,7 +81,7 @@ export const menuItems = (): Array<UseMenu> => {
   return [
     {
       type: ItemType.GENERAL,
-      label: "Copy Link",
+      label: MenuItemEnums.COPY_LINK,
       icon: jsonfy(copyLinkJsonIcon),
       shortcut: ["C"],
       callback: () =>
@@ -89,7 +89,7 @@ export const menuItems = (): Array<UseMenu> => {
     },
     {
       type: ItemType.GENERAL,
-      label: "Send Email",
+      label: MenuItemEnums.SEND_MAIL,
       icon: jsonfy(sendMailJsonIcon),
       shortcut: ["E"],
       callback: (): Promise<Window | void> =>
@@ -97,7 +97,7 @@ export const menuItems = (): Array<UseMenu> => {
     },
     {
       type: ItemType.GENERAL,
-      label: "Source Code",
+      label: MenuItemEnums.SOURCE_CODE,
       icon: jsonfy(sourceCodeJsonIcon),
       shortcut: ["S"],
       callback: (): Promise<Window | void> =>
@@ -105,7 +105,7 @@ export const menuItems = (): Array<UseMenu> => {
     },
     {
       type: ItemType.GO_TO,
-      label: "Home",
+      label: MenuItemEnums.HOME,
       icon: jsonfy(homeJsonIcon),
       shortcut: ["G", "H"],
       callback: (): Promise<NavigationFailure | void> =>
@@ -113,7 +113,7 @@ export const menuItems = (): Array<UseMenu> => {
     },
     {
       type: ItemType.GO_TO,
-      label: "Career",
+      label: MenuItemEnums.CAREER,
       icon: jsonfy(articleJsonIcon),
       shortcut: ["G", "C"],
       callback: (): Promise<NavigationFailure | void> =>
@@ -121,7 +121,7 @@ export const menuItems = (): Array<UseMenu> => {
     },
     {
       type: ItemType.GO_TO,
-      label: "Projects",
+      label: MenuItemEnums.PROJECTS,
       icon: jsonfy(projectJsonIcon),
       shortcut: ["G", "P"],
       callback: (): Promise<NavigationFailure | void> =>
@@ -129,7 +129,7 @@ export const menuItems = (): Array<UseMenu> => {
     },
     {
       type: ItemType.GO_TO,
-      label: "About",
+      label: MenuItemEnums.ABOUT,
       icon: jsonfy(aboutJsonIcon),
       shortcut: ["G", "A"],
       callback: (): Promise<NavigationFailure | void> =>
