@@ -1,6 +1,32 @@
 {
+  "extends": "../.nuxt/tsconfig.server.json",
+  "include": ["./**/*", "**/*.ts", "**/*.tsx"],
   "compilerOptions": {
-    "paths": {}
+    "isolatedModules": true,
+    "noImplicitThis": true,
+    "declaration": true,
+    "strict": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "noUncheckedIndexedAccess": true,
+    "sourceMap": true,
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "target": "es2017",
+    "module": "commonjs",
+    "resolveJsonModule": true,
   },
-  "extends": "../.nuxt/tsconfig.server.json"
+  "paths": {
+    "@/*": ["./*"],
+  }
 }

@@ -1,8 +1,5 @@
 import { defineEventHandler, EventHandlerResponse, H3Event } from "h3";
-import { UserExperience } from "../../types/useExperiences";
-import { ProjectTechStack, UseProjectInterface } from "../../types/useProjects";
-import { TechStackCard, TechStackEnum } from "../../types/techStackCard";
-import { extractValues } from "../../utils/extractValues";
+import { UseProjectInterface } from "~/types/useProjects";
 
 export default defineEventHandler<Omit<UseProjectInterface, "getTechIds">[]>(
   (
