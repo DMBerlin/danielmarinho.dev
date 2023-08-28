@@ -1,5 +1,5 @@
 import { defineEventHandler, EventHandlerResponse, H3Event } from "h3";
-import { UseProjectInterface } from '~/types/useProjects';
+import { UseProjectInterface } from "~/types/useProjects";
 
 export default defineEventHandler<Omit<UseProjectInterface, "getTechIds">[]>(
   (

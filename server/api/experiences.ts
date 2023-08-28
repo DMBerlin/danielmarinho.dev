@@ -1,5 +1,5 @@
 import { defineEventHandler, EventHandlerResponse, H3Event } from "h3";
-import { UserExperience } from '~/types/useExperiences';
+import { UserExperience } from "~/types/useExperiences";
 
 export default defineEventHandler<UserExperience[]>(
   (event: H3Event): EventHandlerResponse<UserExperience[]> => {

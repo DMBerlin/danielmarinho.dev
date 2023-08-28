@@ -16,10 +16,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/device",
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/device"],
   runtimeConfig: {
     public: {
       root: process.env.BASE_URL || "localhost:3000",
