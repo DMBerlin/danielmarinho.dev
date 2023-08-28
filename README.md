@@ -95,6 +95,10 @@ Here you'll find all the types used on the project.
 
 Here you'll find all the utility functions used on the project.
 
+## 🎨 Commintlint & Husky
+
+This project uses [Commintlint](https://commitlint.js.org/#/) and [Husky](https://typicode.github.io/husky/) to keep nice commit semantics. Checkout their pages to find out more about the ideia behind Semantic Commit Messages.
+
 ## 📝 Environment Variables
 
 This projects use environment variables to set custom string values to certain config parameters. Here are a list of environment variables you can customize:
