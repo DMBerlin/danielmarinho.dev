@@ -11,6 +11,8 @@
   "version": "0.9.0",
   "private": true,
   "scripts": {
+    "commit": "git-cz",
+    "prepare": "husky install",
     "build": "nuxt build",
     "dev": "nuxt dev --dotenv .env.local",
     "generate": "nuxt generate",
@@ -20,16 +22,21 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.22.10",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
     "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@types/node": "^18.16.19",
     "@typescript-eslint/parser": "^6.1.0",
     "@vue/language-plugin-pug": "^1.8.5",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vue": "^9.17.0",
     "eslint-webpack-plugin": "^4.0.1",
+    "husky": "^8.0.3",
     "nuxt": "^3.6.5",
     "prettier": "^3.0.0",
     "typescript": "^5.1.6"
@@ -41,5 +48,10 @@
     "lottie-web-vue": "^2.0.7",
     "pug": "^3.0.2",
     "sass": "^1.66.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
