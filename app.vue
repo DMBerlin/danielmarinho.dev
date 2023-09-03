@@ -7,6 +7,9 @@ body {
   margin: 0;
   padding: 0;
   background-color: $--colors-background;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "salt", "ss01", "ss03", "cv01", "cv02", "cv03", "cv04",
+    "cv05", "cv06", "cv09", "cv10", "cv11";
 }
 
 body::-webkit-scrollbar {
