@@ -3,6 +3,14 @@ import { NuxtConfig } from "@nuxt/schema";
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      meta: [
+        { property: "og:type", content: "website" },
+        { name: "next-head-count", content: "8" },
+      ],
+    }
+  },
   devtools: { enabled: true },
   imports: { autoImport: true },
   css: ["~/assets/css/styles.css"],
