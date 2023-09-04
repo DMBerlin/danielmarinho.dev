@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import { ConfigLayerMeta, InputConfig } from "c12";
 import { NuxtConfig } from "@nuxt/schema";
 import { defineNuxtConfig } from "nuxt/config";
