@@ -53,7 +53,7 @@ export default defineEventHandler(
         endDate: new Date("2014-11-01").toISOString(),
       },
       {
-        companyUrl: "https://www.bb.com",
+        companyUrl: "https://www.bb.com.br",
         companyName: "Banco do Brasil",
         jobLocation: "Brazil",
         jobTitle: "Software Developer",
