@@ -7,11 +7,24 @@ import { useIntersects, useProjects } from "~/composables/useProjects";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import { useTechStack } from "~/composables/useTechStack";
 import { usePublicConfig } from "~/composables/usePublicConfig";
+import { useRoute } from 'vue-router';
 
 const config = usePublicConfig();
+const route = useRoute();
+const description = ref(
+  "I'm a Software Engineer who's all about diving into exciting projects and making things happen. I'm not just about the usual stuff – I'm always looking for ways to make things better and team up with others to create something new and cool.",
+);
+const fullPath = config.root + route.fullPath;
 
 useHead({
   title: "Projects // " + config.siteAuthor,
+  meta: [
+    { property: "og:title", content: config.siteAuthor },
+    { name: "description", content: description.value },
+    { property: "og:description", content: description.value },
+    { name: "url", content: fullPath },
+    { property: "og:url", content: fullPath },
+  ],
 });
 
 const state = useAppState();
@@ -52,7 +65,7 @@ div.flex.flex-col.flex-grow
         div.flex.justify-start.items-start
           div.flex
             div.text-area
-              p I'm a Software Engineer who's all about diving into exciting projects and making things happen. I'm not just about the usual stuff – I'm always looking for ways to make things better and team up with others to create something new and cool.
+              p {{ description }}
               p When it comes to tech, I've got a bunch of tools up my sleeve. I've used them to tackle different projects and put them to work in some pretty interesting ways, from hands-on experience to innovative implementations.
       section
         p.section-title Techstack

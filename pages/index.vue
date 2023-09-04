@@ -1,14 +1,25 @@
 <script setup lang="ts">
-import { onBeforeMount } from "vue";
+import { onBeforeMount, ref } from 'vue';
 import { useHead } from "@unhead/vue";
 import { useAppState } from "~/composables/useAppState";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import { usePublicConfig } from "~/composables/usePublicConfig";
+import { useRoute } from 'vue-router';
 
 const config = usePublicConfig();
+const route = useRoute();
+const description = ref("Passioned about Web Technology.");
+const fullPath = config.root + route.fullPath;
 
 useHead({
   title: config.siteAuthor,
+  meta: [
+    { property: "og:title", content: config.siteAuthor },
+    { name: "description", content: description.value },
+    { property: "og:description", content: description.value },
+    { name: "url", content: fullPath },
+    { property: "og:url", content: fullPath },
+  ],
 });
 
 const state = useAppState();
@@ -25,7 +36,7 @@ div.flex-grow
       div.max-w-960px
         p.my-name Daniel Marinho
         p.my-title Software Development Engineer, CS B.Sc.
-        p.my-label Passioned about Web Technology.
+        p.my-label {{ description }}
         div(@click="openMenu").flex.justify-center.items-center.h-3px.my-8.cursor-pointer.shortcut-btn
           template(v-if="isWindows")
             div.font-bold.text-xl.cmd-label Press
