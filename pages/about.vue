@@ -1,15 +1,26 @@
 <script setup lang="ts">
-import { computed, onBeforeMount } from "vue";
+import { computed, onBeforeMount, ref } from 'vue';
 import { useHead } from "@unhead/vue";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import GradientTitle from "~/components/GradientTitle.vue";
 import { getYearsOfMarriage } from "~/utils/dateUtils";
 import { usePublicConfig } from "~/composables/usePublicConfig";
+import { useRoute } from 'vue-router';
 
 const config = usePublicConfig();
+const route = useRoute();
+const description = ref("Passioned about Web Technology.");
+const fullPath = config.root + route.fullPath;
 
 useHead({
   title: "About // " + config.siteAuthor,
+  meta: [
+    { property: "og:title", content: config.siteAuthor },
+    { name: "description", content: description.value },
+    { property: "og:description", content: description.value },
+    { name: "url", content: fullPath },
+    { property: "og:url", content: fullPath },
+  ],
 });
 
 onBeforeMount(() => useNavigationStateHandler());

@@ -11,20 +11,27 @@ import CareerExperienceCard from "~/components/Career/ExperienceCard.vue";
 import { useExperiences } from "~/composables/useExperiences";
 import { usePublicConfig } from "~/composables/usePublicConfig";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
-import copyPasteIcon from "~/public/static/lotties/copy-bio.json";
-import downloadIcon from "~/public/static/lotties/download.json";
-import successIcon from "~/public/static/lotties/success.json";
+import copyPasteIcon from "assets/icons/copy-bio.json";
+import downloadIcon from "assets/icons/download.json";
+import successIcon from "assets/icons/success.json";
 import { useLogEvent } from "~/composables/useLogEvent";
 import { EventNames } from "~/types/useLogEvent";
+import { useRoute } from 'vue-router';
 
 const config = usePublicConfig();
-
-const quoteText = ref(
-  "Computer scientist with a 4-year Brazilian bachelor's degree and 8+ years of software engineering experience. Expert in problem-solving throughout the software development life cycle. Enthusiastic, team-oriented, and committed to creating exceptional user experiences through collaboration and continuous learning.",
-);
+const route = useRoute();
+const description = ref("Web engineering is my true passion! When I'm not engrossed in coding, you'll likely find me immersed in documentaries and movies from the 80s or contributing on Open Source Communities.");
+const fullPath = config.root + route.fullPath;
 
 useHead({
   title: "Career // " + config.siteAuthor,
+  meta: [
+    { property: "og:title", content: config.siteAuthor },
+    { name: "description", content: description.value },
+    { property: "og:description", content: description.value },
+    { name: "url", content: fullPath },
+    { property: "og:url", content: fullPath },
+  ],
 });
 
 const logEvent = useLogEvent();
@@ -36,7 +43,7 @@ const downloadResume = ref(() => {
 });
 const copyBio = ref(() => {
   logEvent.emit(EventNames.BIO_COPIED);
-  clipboard.write(quoteText.value);
+  clipboard.write(description.value);
 });
 onBeforeMount(() => useNavigationStateHandler());
 </script>
@@ -59,12 +66,12 @@ div.flex.flex-col.flex-grow
             div.flex
               div.text-area
                 p.pb-5 Hi! I'm <label class="text-highlight">Daniel Marinho</label>, a Computer Scientist graduated from Brazil in late 2015. But my journey with computers started way back in my childhood, during a time when "GeoCities" was still a thing!
-                p.pb-5 Web engineering is my true passion! When I'm not engrossed in coding, you'll likely find me immersed in documentaries and movies from the 80s or contributing on Open Source Communities.
+                p.pb-5 {{ description }}
       section
         p.section-title Bio
         p.section-paragraph Here you can find a little bit of my professional background and companies I worked for.
       section
-        TextQuote(:quote="quoteText")
+        TextQuote(:quote="description")
       section.flex.justify-end.items-end
         ReactiveButton(:callback="copyBio" :icon="copyPasteIcon" :on-click-icon="successIcon" :reactive-anim-time="2020" ald="Copy Bio" label="Copy Bio")
         p.text-gray-400.text-xl.mx-4.pb-2  •
