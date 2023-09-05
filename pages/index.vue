@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { onBeforeMount, ref } from 'vue';
+import { onBeforeMount, ref } from "vue";
 import { useHead } from "@unhead/vue";
+import { useRoute } from "vue-router";
 import { useAppState } from "~/composables/useAppState";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import { usePublicConfig } from "~/composables/usePublicConfig";
-import { useRoute } from 'vue-router';
 
 const config = usePublicConfig();
 const route = useRoute();

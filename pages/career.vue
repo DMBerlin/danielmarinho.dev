@@ -2,6 +2,7 @@
 import { onBeforeMount, ref } from "vue";
 import { useHead } from "@unhead/vue";
 import clipboard from "clipboardy";
+import { useRoute } from "vue-router";
 import TextQuote from "~/components/TextQuote.vue";
 import { useNewTab } from "~/composables/useNewTab";
 import GradientTitle from "~/components/GradientTitle.vue";
@@ -16,11 +17,12 @@ import downloadIcon from "assets/icons/download.json";
 import successIcon from "assets/icons/success.json";
 import { useLogEvent } from "~/composables/useLogEvent";
 import { EventNames } from "~/types/useLogEvent";
-import { useRoute } from 'vue-router';
 
 const config = usePublicConfig();
 const route = useRoute();
-const description = ref("Web engineering is my true passion! When I'm not engrossed in coding, you'll likely find me immersed in documentaries and movies from the 80s or contributing on Open Source Communities.");
+const description = ref(
+  "Web engineering is my true passion! When I'm not engrossed in coding, you'll likely find me immersed in documentaries and movies from the 80s or contributing on Open Source Communities.",
+);
 const fullPath = config.root + route.fullPath;
 
 useHead({
@@ -84,6 +86,7 @@ div.flex.flex-col.flex-grow
             :company-url="experience.companyUrl"
             :job-location="experience.jobLocation"
             :job-title="experience.jobTitle"
+            :job-description="experience.jobDescription"
             :start-date="new Date(experience.startDate)"
             :end-date="new Date(experience.endDate)"
           )

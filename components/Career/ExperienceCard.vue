@@ -6,6 +6,7 @@ const props = defineProps<{
   companyUrl: string;
   companyName: string;
   jobLocation: string;
+  jobDescription: string[];
   jobTitle: string;
   startDate: Date;
   endDate: Date;
@@ -19,10 +20,16 @@ div.career-card
     div.career-location {{ props.jobLocation }}
   div
     div.career-period {{ getTimeDifference(props.startDate, props.endDate) }}
+  div
+    template(v-for="description in props.jobDescription")
+      p.career-description {{ description }}
 </template>
 <style scoped lang="scss">
 .career-card {
   margin: 32px 0;
+  padding: 18px;
+  border-radius: 4px;
+  background-color: $--colors-background-secondary;
 }
 .career-period {
   font-weight: lighter;
@@ -41,6 +48,17 @@ div.career-card
   margin: 0 8px;
   line-height: 32px;
   left: 0.4em;
+}
+.career-description {
+  color: $--colors-secondary;
+  font-family: $--fonts-body;
+  font-size: 14px;
+}
+.career-description::before {
+  color: $--colors-secondary;
+  content: "•";
+  position: relative;
+  padding-right: 6px;
 }
 .career-company {
   position: relative;
@@ -69,11 +87,11 @@ div.career-card
 }
 @media screen and (max-width: 768px) {
   .career-company {
-    width: 100%;
+    display: inline-flex;
   }
   .career-location {
     text-align: right;
-    width: 100px;
+    width: 100%;
   }
 }
 </style>

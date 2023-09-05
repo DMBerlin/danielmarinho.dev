@@ -1,4 +1,6 @@
 {
+  "private": true,
+  "version": "0.13.0",
   "name": "my-personal-site",
   "author": {
     "name": "Daniel Marinho",
@@ -8,8 +10,6 @@
   "engines": {
     "node": "^18.17.1"
   },
-  "version": "0.12.1",
-  "private": true,
   "scripts": {
     "commit": "git-cz",
     "prepare": "husky install",
