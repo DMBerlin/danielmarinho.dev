@@ -41,7 +41,7 @@ export default defineEventHandler(
         jobDescription: [
           "Full-stack developer on web applications",
           "Development of SPAs",
-          "Development of mobile apps"
+          "Development of mobile apps",
         ],
         startDate: new Date("2018-4-1").toISOString(),
         endDate: new Date("2019-10-1").toISOString(),
@@ -112,10 +112,7 @@ export default defineEventHandler(
         companyName: "Freelancer",
         jobTitle: "Web Developer",
         jobLocation: "Brazil",
-        jobDescription: [
-          "Website development",
-          "CMS development",
-        ],
+        jobDescription: ["Website development", "CMS development"],
         startDate: new Date("2008-1-2").toISOString(),
         endDate: new Date("2011-12-1").toISOString(),
       },
