@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { computed, onBeforeMount, ref } from 'vue';
+import { computed, onBeforeMount, ref } from "vue";
 import { useHead } from "@unhead/vue";
+import { useRoute } from "vue-router";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import GradientTitle from "~/components/GradientTitle.vue";
 import { getYearsOfMarriage } from "~/utils/dateUtils";
 import { usePublicConfig } from "~/composables/usePublicConfig";
-import { useRoute } from 'vue-router';
 
 const config = usePublicConfig();
 const route = useRoute();

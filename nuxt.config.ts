@@ -9,7 +9,7 @@ export default defineNuxtConfig({
         { property: "og:type", content: "website" },
         { name: "next-head-count", content: "8" },
       ],
-    }
+    },
   },
   devtools: { enabled: true },
   imports: { autoImport: true },
