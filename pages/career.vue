@@ -86,6 +86,7 @@ div.flex.flex-col.flex-grow
             :company-url="experience.companyUrl"
             :job-location="experience.jobLocation"
             :job-title="experience.jobTitle"
+            :job-description="experience.jobDescription"
             :start-date="new Date(experience.startDate)"
             :end-date="new Date(experience.endDate)"
           )
