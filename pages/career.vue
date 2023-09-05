@@ -18,8 +18,8 @@ import successIcon from "~/assets/icons/success.json";
 import { useLogEvent } from "~/composables/useLogEvent";
 import { EventNames } from "~/types/useLogEvent";
 
-const config = usePublicConfig();
 const route = useRoute();
+const config = usePublicConfig();
 const description = ref(
   "Web engineering is my true passion! When I'm not engrossed in coding, you'll likely find me immersed in documentaries and movies from the 80s or contributing on Open Source Communities.",
 );
@@ -35,9 +35,15 @@ useHead({
     { property: "og:url", content: fullPath },
   ],
 });
+
+const isLoading = ref(true);
 const logEvent = useLogEvent();
 const { cvFileUrl } = usePublicConfig();
-const experiences: any[] = await useExperiences();
+const experiences = await useExperiences()
+  .then((experiences) => {
+    isLoading.value = false;
+    return experiences;
+  });
 const downloadResume = ref(() => {
   logEvent.emit(EventNames.RESUME_DOWNLOADED);
   useNewTab(cvFileUrl);
@@ -79,8 +85,10 @@ div.flex.flex-col.flex-grow
         RegularButton(@click="downloadResume" :icon="downloadIcon" ald="Download" label="Download Resumé")
       section
         p.section-title Career
-        template(v-for="experience in experiences")
+        template(v-if="isLoading")
+        template(v-else)
           CareerExperienceCard(
+            v-for="experience in experiences"
             :company-name="experience.companyName"
             :company-url="experience.companyUrl"
             :job-location="experience.jobLocation"
