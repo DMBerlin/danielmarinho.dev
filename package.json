@@ -20,6 +20,14 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint . --fix"
   },
+  "dependencies": {
+    "@nuxtjs/device": "^3.1.0",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@vercel/analytics": "^1.0.2",
+    "lottie-web-vue": "^2.0.7",
+    "pug": "^3.0.2",
+    "sass": "^1.66.1"
+  },
   "devDependencies": {
     "@babel/eslint-parser": "^7.22.10",
     "@commitlint/cli": "^17.7.1",
@@ -40,14 +48,6 @@
     "nuxt": "^3.6.5",
     "prettier": "^3.0.0",
     "typescript": "^5.1.6"
-  },
-  "dependencies": {
-    "@nuxtjs/device": "^3.1.0",
-    "@nuxtjs/tailwindcss": "^6.8.0",
-    "@vercel/analytics": "^1.0.2",
-    "lottie-web-vue": "^2.0.7",
-    "pug": "^3.0.2",
-    "sass": "^1.66.1"
   },
   "config": {
     "commitizen": {
