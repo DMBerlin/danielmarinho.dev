@@ -12,9 +12,9 @@ import CareerExperienceCard from "~/components/Career/ExperienceCard.vue";
 import { useExperiences } from "~/composables/useExperiences";
 import { usePublicConfig } from "~/composables/usePublicConfig";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
-import copyPasteIcon from "assets/icons/copy-bio.json";
-import downloadIcon from "assets/icons/download.json";
-import successIcon from "assets/icons/success.json";
+import copyPasteIcon from "~/assets/icons/copy-bio.json";
+import downloadIcon from "~/assets/icons/download.json";
+import successIcon from "~/assets/icons/success.json";
 import { useLogEvent } from "~/composables/useLogEvent";
 import { EventNames } from "~/types/useLogEvent";
 
@@ -35,10 +35,9 @@ useHead({
     { property: "og:url", content: fullPath },
   ],
 });
-
 const logEvent = useLogEvent();
 const { cvFileUrl } = usePublicConfig();
-const experiences = await useExperiences();
+const experiences: any[] = await useExperiences();
 const downloadResume = ref(() => {
   logEvent.emit(EventNames.RESUME_DOWNLOADED);
   useNewTab(cvFileUrl);

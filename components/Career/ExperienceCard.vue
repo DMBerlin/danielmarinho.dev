@@ -25,6 +25,11 @@ div.career-card
       p.career-description {{ description }}
 </template>
 <style scoped lang="scss">
+.career-title {
+  font-size: 18px;
+  color: $--colors-primary;
+  font-family: $--fonts-heading;
+}
 .career-card {
   margin: 32px 0;
   padding: 18px;
@@ -52,7 +57,7 @@ div.career-card
 .career-description {
   color: $--colors-secondary;
   font-family: $--fonts-body;
-  font-size: 14px;
+  font-size: 14px;;
 }
 .career-description::before {
   color: $--colors-secondary;
@@ -79,11 +84,6 @@ div.career-card
 }
 .career-company:hover {
   color: $--colors-secondary;
-}
-.career-title {
-  font-size: 18px;
-  color: $--colors-primary;
-  font-family: $--fonts-body;
 }
 @media screen and (max-width: 768px) {
   .career-company {

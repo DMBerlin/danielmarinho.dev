@@ -156,7 +156,7 @@ div.flex.flex-col.flex-grow
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  background-color: transparent;
+  background-color: $--colors-background-secondary;
 }
 
 @media screen and (max-width: 768px) {
