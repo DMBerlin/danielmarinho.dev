@@ -39,11 +39,10 @@ useHead({
 const isLoading = ref(true);
 const logEvent = useLogEvent();
 const { cvFileUrl } = usePublicConfig();
-const experiences = await useExperiences()
-  .then((experiences) => {
-    isLoading.value = false;
-    return experiences;
-  });
+const experiences = await useExperiences().then((experiences) => {
+  isLoading.value = false;
+  return experiences;
+});
 const downloadResume = ref(() => {
   logEvent.emit(EventNames.RESUME_DOWNLOADED);
   useNewTab(cvFileUrl);
