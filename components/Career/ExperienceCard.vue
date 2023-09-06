@@ -31,9 +31,9 @@ div.career-card
   font-family: $--fonts-heading;
 }
 .career-card {
-  margin: 32px 0;
-  padding: 18px;
-  border-radius: 4px;
+  margin: 14px 0;
+  padding: 14px 18px;
+  border-radius: 6px;
   background-color: $--colors-background-secondary;
 }
 .career-period {
