@@ -6,13 +6,15 @@ const props = defineProps<{
   size?: string;
   leftColor: string;
   rightColor: string;
+  customGradient?: string;
 }>();
 
 const fontSize = props.size || '45px';
+const gradientConfig = props.customGradient || `linear-gradient(45deg, ${props.leftColor}, ${props.rightColor})`;
 const gradientStyle = computed(
   () =>
     `
-      background-image: linear-gradient(45deg, ${props.leftColor}, ${props.rightColor});
+      background-image: ${gradientConfig};
       font-size: ${fontSize};
     `,
 );
