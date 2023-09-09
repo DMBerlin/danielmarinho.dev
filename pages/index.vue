@@ -5,6 +5,7 @@ import { useRoute } from "vue-router";
 import { useAppState } from "~/composables/useAppState";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import { usePublicConfig } from "~/composables/usePublicConfig";
+import GradientTitle from "~/components/GradientTitle.vue";
 
 const config = usePublicConfig();
 const route = useRoute();
@@ -32,11 +33,18 @@ onBeforeMount(() => useNavigationStateHandler());
 <template lang="pug">
 div.flex-grow
   div.height-to
-    div.card
+    div.card.flex-col
+      div.max-w-960px.name-header.py-6
+        GradientTitle(
+          title="Daniel Marinho"
+          left-color="#6363f1"
+          right-color="#3498ea"
+          size="4.5rem"
+        )
       div.max-w-960px
-        p.my-name Daniel Marinho
         p.my-title Software Development Engineer, CS B.Sc.
         p.my-label {{ description }}
+      div.max-w-960px
         div(@click="openMenu").flex.justify-center.items-center.h-3px.my-8.cursor-pointer.shortcut-btn
           template(v-if="isWindows")
             div.font-bold.text-xl.cmd-label Press
@@ -54,27 +62,28 @@ div.flex-grow
   color: $--colors-primary;
 }
 
-.my-name {
-  color: $--colors-primary;
-  font-family: $--fonts-heading;
-  font-size: 32px;
-  padding: 16px 0;
-  width: auto;
+.name-header {
+  text-align: center;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .my-title {
   color: $--colors-primary;
   font-family: $--fonts-body;
-  font-size: 18px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 20px;
   padding: 8px 0;
   width: auto;
 }
 
 .my-label {
-  color: $--colors-primary;
   color: $--colors-secondary;
-  font-size: 16px;
-  padding: 8px 0;
+  font-family: $--fonts-body;
+  text-align: center;
+  font-size: 18px;
+  line-height: 18px;
   font-weight: 400;
 }
 
