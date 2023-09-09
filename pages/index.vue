@@ -34,16 +34,17 @@ onBeforeMount(() => useNavigationStateHandler());
 div.flex-grow
   div.height-to
     div.card.flex-col
-      div.max-w-960px.name-header
+      div.max-w-960px.name-header.py-6
         GradientTitle(
           title="Daniel Marinho"
-          left-color="#a163f1"
+          left-color="#6363f1"
           right-color="#3498ea"
           size="4.5rem"
         )
       div.max-w-960px
         p.my-title Software Development Engineer, CS B.Sc.
         p.my-label {{ description }}
+      div.max-w-960px
         div(@click="openMenu").flex.justify-center.items-center.h-3px.my-8.cursor-pointer.shortcut-btn
           template(v-if="isWindows")
             div.font-bold.text-xl.cmd-label Press
@@ -71,17 +72,18 @@ div.flex-grow
   color: $--colors-primary;
   font-family: $--fonts-body;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
+  line-height: 20px;
   padding: 8px 0;
   width: auto;
 }
 
 .my-label {
-  color: $--colors-primary;
   color: $--colors-secondary;
+  font-family: $--fonts-body;
   text-align: center;
-  font-size: 16px;
-  padding: 8px 0;
+  font-size: 18px;
+  line-height: 18px;
   font-weight: 400;
 }
 
