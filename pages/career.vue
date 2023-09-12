@@ -21,7 +21,7 @@ import successIcon from "~/assets/icons/success.json";
 const route = useRoute();
 const config = usePublicConfig();
 const description = ref(
-  "That\'s when I realized that web engineering is my one true passion! It was like a light bulb moment that made my heart go, \"click!\"",
+  'That\'s when I realized that web engineering is my one true passion! It was like a light bulb moment that made my heart go, "click!"',
 );
 const fullPath = config.root + route.fullPath;
 

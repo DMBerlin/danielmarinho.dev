@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useNewTab } from '~/composables/useNewTab';
 import { getTimeDifference } from '~/utils/dateUtils';
-
 const props = defineProps<{
   companyUrl: string;
   companyName: string;
