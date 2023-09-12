@@ -4,29 +4,40 @@
   "include": ["./**/*", "**/*.ts", "**/*.tsx"],
   "exclude": ["./dist", "./.output", "./~"],
   "compilerOptions": {
-    "isolatedModules": true,
-    "noImplicitThis": true,
-    "declaration": true,
-    "strict": true,
-    "allowJs": true,
+    /* Base Options */
     "esModuleInterop": true,
-    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "target": "es2017",
+    "verbatimModuleSyntax": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "sourceMap": true,
+    "incremental": true,
+    "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "noUncheckedIndexedAccess": true,
-    "sourceMap": true,
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
+
+    /* Strictness */
+    "strict": true,
+    "noImplicitThis": true,
     "noImplicitAny": false,
+    "strictNullChecks": false,
     "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
+    "noUncheckedIndexedAccess": true,
     "noFallthroughCasesInSwitch": false,
-    "target": "es2017",
-    "module": "commonjs",
-    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+
+    /* Not transpiling with TypeScript: */
+    "moduleResolution": "NodeNext",
+    "isolatedModules": true,
+    "module": "NodeNext",
+    "noEmit": true,
+
+    /* Code in the DOM: */
+    "lib": ["es2022", "dom"],
   },
   "vueCompilerOptions": {
     "plugins": ["@vue/language-plugin-pug"]
