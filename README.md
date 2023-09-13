@@ -1,4 +1,5 @@
 ## 🚀 My Personal Page
+
 This page was built to highlight my career as a Software Engineer and projects that I have built.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDMBerlin%2Fdanielmarinho.dev)
@@ -103,7 +104,7 @@ This project uses [Commintlint](https://commitlint.js.org/#/) and [Husky](https:
 
 This projects use environment variables to set custom string values to certain config parameters. Here are a list of environment variables you can customize:
 
-``` dotenv
+```dotenv
 REPOSITORY_URL="" # URL to the projects git repository
 LINKEDIN_PROFILE_URL="" # Your LinkedIn url profile
 INSTAGRAM_PROFILE_URL="" # Your Instagram url profile

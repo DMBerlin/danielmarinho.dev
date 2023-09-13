@@ -82,17 +82,25 @@ div.flex.flex-col.flex-grow
       section
         TextQuote(:quote="description")
       section.flex.justify-end.items-end
-        ReactiveButton(:callback="copyBio" :icon="copyPasteIcon" :on-click-icon="successIcon" :reactive-anim-time="2020" ald="Copy Bio" label="Copy Bio")
+        ReactiveButton(
+:callback="copyBio"
+:icon="copyPasteIcon"
+:on-click-icon="successIcon"
+:reactive-anim-time="2020"
+ald="Copy Bio"
+label="Copy Bio")
         p.text-gray-400.text-xl.mx-4.pb-2  •
-        RegularButton(@click="downloadResume" :icon="downloadIcon" ald="Download" label="Download Resumé")
+        RegularButton(:icon="downloadIcon" ald="Download" label="Download Resumé" @click="downloadResume")
       section
         p.section-title Career
         template(v-if="isLoading")
         template(v-else)
           CareerExperienceCard(
             v-for="experience in experiences"
+            :key="experience.id"
             :company-name="experience.companyName"
             :company-url="experience.companyUrl"
+            :company-logo="experience.companyLogo"
             :job-location="experience.jobLocation"
             :job-title="experience.jobTitle"
             :job-description="experience.jobDescription"

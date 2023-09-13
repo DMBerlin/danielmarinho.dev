@@ -69,16 +69,16 @@ div.flex.flex-col.flex-grow
               p When it comes to tech, I've got a bunch of tools up my sleeve. I've used them to tackle different projects and put them to work in some pretty interesting ways, from hands-on experience to innovative implementations.
       section
         p.section-title Techstack
-        TechStackWidget(@onUpdate="updateProjectList")
+        TechStackWidget(@on-update="updateProjectList")
       section
         p.section-title Projects
         div.flex-col.justify-start.items-start
-          template(v-for="project in projects" :key="project.id")
+          template(v-for="(project, index) in projects" :key="index")
             div(v-show="projectFilterHandler(project)").project-card
               p.project-title {{ project.title }}
               p.project-description {{ project.description }}
               div.skill-wrapper
-                template(v-for="stack in project.stack")
+                template(v-for="stack in project.stack" :key="stack")
                   div.skill-card
                     span.skill-icon(:style="`background-image: url(${getTechIcon(stack)})`")
                     p.skill-label {{ getTechLabel(stack) }}

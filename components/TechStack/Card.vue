@@ -16,7 +16,7 @@ const updateSkillFilter = (cardId) =>
     !state.value.projects.stackFilter[cardId]);
 </script>
 <template lang="pug">
-div.programming-card.flex-row.items-center.justify-around.mx-1(@click="updateSkillFilter(props.id)" :class="isSelected ? 'programming-card-selected' : 'programming-card-default'")
+div.programming-card.flex-row.items-center.justify-around.mx-1(:class="isSelected ? 'programming-card-selected' : 'programming-card-default'" @click="updateSkillFilter(props.id)")
   div.programming-icon(:style="programmingIcon")
   p.programming-label {{ props.label }}
 </template>

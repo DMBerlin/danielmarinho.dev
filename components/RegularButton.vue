@@ -16,10 +16,10 @@ button(
   @click="props.callback"
 ).btn-standard
   LottieAnimation(
-    :animation-data="props.icon"
-    :auto-play="false"
     ref="lottieRef"
     autoplay
+    :animation-data="props.icon"
+    :auto-play="false"
   ).lottie-icon
   span {{ props.label }}
 </template>

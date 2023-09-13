@@ -25,7 +25,7 @@ div(@click.self="hideNavigation").bg.flex.justify-center.items-center
   div.modal.mirror.overflow-auto
     MenuSearchInput(@search-handler="inputHandler")
     template(v-if="searchInput && searchInput.length > 0" )
-      template(v-for="item in searchResults")
+      template(v-for="(item, index) in searchResults" :key="index")
         MenuListItem(
           :icon="item.icon"
           :label="item.label"
@@ -35,7 +35,7 @@ div(@click.self="hideNavigation").bg.flex.justify-center.items-center
         ).border-bottom
     template(v-else)
       span.section-title GENERAL
-      template(v-for="item in general")
+      template(v-for="(item, index) in general" :key="index")
         MenuListItem(
           :icon="item.icon"
           :label="item.label"
@@ -44,7 +44,7 @@ div(@click.self="hideNavigation").bg.flex.justify-center.items-center
           @click="hideNavigation"
         ).border-bottom
       span.section-title GO TO
-      template(v-for="item in goTo")
+      template(v-for="(item, index) in goTo" :key="index")
         MenuListItem(
           :icon="item.icon"
           :label="item.label"

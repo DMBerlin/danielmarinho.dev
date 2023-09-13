@@ -1,6 +1,6 @@
+import { FetchError } from "ofetch";
 import { _AsyncData } from "#app/composables/asyncData";
 import { useFetch } from "#app";
-import { FetchError } from "ofetch";
 import { UserExperience } from "~/types/useExperiences";
 
 export const useExperiences = async (): Promise<UserExperience[]> => {

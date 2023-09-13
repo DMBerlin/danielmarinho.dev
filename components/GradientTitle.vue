@@ -9,8 +9,10 @@ const props = defineProps<{
   customGradient?: string;
 }>();
 
-const fontSize = props.size || '45px';
-const gradientConfig = props.customGradient || `linear-gradient(45deg, ${props.leftColor}, ${props.rightColor})`;
+const fontSize = props.size || "45px";
+const gradientConfig =
+  props.customGradient ||
+  `linear-gradient(45deg, ${props.leftColor}, ${props.rightColor})`;
 const gradientStyle = computed(
   () =>
     `

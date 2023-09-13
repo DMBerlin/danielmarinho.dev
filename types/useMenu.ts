@@ -3,14 +3,6 @@ export enum ItemType {
   GO_TO = "goTo",
 }
 
-export interface UseMenu {
-  type: ItemType;
-  label: MenuItemEnums;
-  icon: JSON;
-  shortcut: string[];
-  callback: Function;
-}
-
 export enum MenuItemEnums {
   COPY_LINK = "Copy Link",
   SEND_MAIL = "Send Email",
@@ -19,4 +11,12 @@ export enum MenuItemEnums {
   CAREER = "Career",
   PROJECTS = "Projects",
   ABOUT = "About",
+}
+
+export interface UseMenu {
+  type: ItemType;
+  label: MenuItemEnums;
+  icon: JSON;
+  shortcut: string[];
+  callback: Function;
 }

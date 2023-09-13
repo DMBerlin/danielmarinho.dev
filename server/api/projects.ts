@@ -1,10 +1,8 @@
-import { defineEventHandler, EventHandlerResponse, H3Event } from "h3";
+import { defineEventHandler, EventHandlerResponse } from "h3";
 import { UseProjectInterface } from "~/types/useProjects";
 
 export default defineEventHandler(
-  (
-    event: H3Event,
-  ): EventHandlerResponse<Omit<UseProjectInterface, "getTechIds">[]> => {
+  (): EventHandlerResponse<Omit<UseProjectInterface, "getTechIds">[]> => {
     return [
       {
         id: 1,

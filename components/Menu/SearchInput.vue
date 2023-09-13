@@ -7,9 +7,9 @@ const handleInput = () => emits("search-handler", inputText.value);
 </script>
 <template lang="pug">
 input(
-  type="text",
-  placeholder="Search a command"
   v-model="inputText"
+  type="text"
+  placeholder="Search a command"
   @keyup="handleInput"
 ).rounded-lg.w-full.bg-transparent.border-none.select-none.outline-none.font-bold.text-lg.search-input
 </template>

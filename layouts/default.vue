@@ -11,9 +11,10 @@ onBeforeMount(() =>
 );
 </script>
 <template lang="pug">
-MenuWidget(v-if="state.navigation.enabled" )
-div.flex.flex-col.min-h-screen
-  NavbarWidget
-  slot
-  Footer
+div
+  MenuWidget(v-if="state.navigation.enabled" )
+  div.flex.flex-col.min-h-screen
+    NavbarWidget
+    slot
+    Footer
 </template>

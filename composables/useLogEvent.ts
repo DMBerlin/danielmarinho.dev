@@ -1,5 +1,7 @@
-import { LogEvent, UseLogEvent } from "~/types/useLogEvent";
-
+import { LogEvent, LogEventReturn, UseLogEvent } from "~/types/useLogEvent";
 export const useLogEvent = (): UseLogEvent => ({
-  emit: (eventName: LogEvent, eventParams?: unknown): void => {},
+  emit: (eventName: LogEvent, eventParams?: unknown): LogEventReturn => ({
+    eventName,
+    eventParams,
+  }),
 });

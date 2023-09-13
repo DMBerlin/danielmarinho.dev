@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { LottieAnimation } from "lottie-web-vue";
-import { computed, ref } from "vue";
+import { ref } from "vue";
 const props = defineProps<{
   icon: JSON;
   label: string;
@@ -21,8 +21,8 @@ const onClickHandler = () => {
   activeState.value = true;
   lottieActionIconRef.value.goToAndPlay(0);
   props.callback();
-  setTimeout(() => activeState.value = false, props.reactiveAnimTime || 0);
-}
+  setTimeout(() => (activeState.value = false), props.reactiveAnimTime || 0);
+};
 </script>
 <template lang="pug">
 button(
@@ -31,17 +31,17 @@ button(
 ).btn-standard
   LottieAnimation(
     v-show="activeState === true"
-    :animation-data="onClickIcon"
-    :auto-play="false"
     ref="lottieActionIconRef"
     autoplay
+    :animation-data="onClickIcon"
+    :auto-play="false"
   ).lottie-icon
   LottieAnimation(
     v-show="activeState === false"
-    :animation-data="icon"
-    :auto-play="false"
     ref="lottieIconRef"
     autoplay
+    :animation-data="icon"
+    :auto-play="false"
   ).lottie-icon
   span {{ props.label }}
 </template>

@@ -18,7 +18,7 @@ const clearSelection = (): void => {
 <template lang="pug">
 div.flex-col.justify-start.items-start.max-w-520px
   div.carrousel
-    template(v-for="card in cards")
+    template(v-for="(card, index) in cards" :key="index")
       TechStackCard(:id="card.id" :label="card.label" :icon="card.icon" :selected="isSelected(card.id)")
     transition
       template(v-if="clearSelectionEnabled")

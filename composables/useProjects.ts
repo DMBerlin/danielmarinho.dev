@@ -1,6 +1,6 @@
+import { FetchError } from "ofetch/dist/node";
 import { useFetch } from "#app";
 import { _AsyncData } from "#app/composables/asyncData";
-import { FetchError } from "ofetch/dist/node";
 import { useTechIndexation } from "~/composables/useTechStack";
 import { ProjectTechStack } from "~/types/useProjects";
 

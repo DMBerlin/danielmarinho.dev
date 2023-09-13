@@ -10,8 +10,8 @@
 @font-face {
   font-family: "Biotif";
   src:
-          url("/static/fonts/Biotif-SemiBold.woff") format("woff"),
-          url("/static/fonts/Biotif-SemiBold.woff2") format("woff2");
+    url("/static/fonts/Biotif-SemiBold.woff") format("woff"),
+    url("/static/fonts/Biotif-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
 }
@@ -19,8 +19,8 @@
 @font-face {
   font-family: "Biotif";
   src:
-          url("/static/fonts/Biotif-Book.woff") format("woff"),
-          url("/static/fonts/Biotif-Book.woff2") format("woff2");
+    url("/static/fonts/Biotif-Book.woff") format("woff"),
+    url("/static/fonts/Biotif-Book.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
@@ -28,8 +28,8 @@
 @font-face {
   font-family: "Biotif";
   src:
-          url("/static/fonts/Biotif-Regular.woff") format("woff"),
-          url("/static/fonts/Biotif-Regular2.woff") format("woff2");
+    url("/static/fonts/Biotif-Regular.woff") format("woff"),
+    url("/static/fonts/Biotif-Regular2.woff") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -37,8 +37,8 @@
 @font-face {
   font-family: "Biotif";
   src:
-          url("/static/fonts/Biotif-RegularItalic.woff") format("woff"),
-          url("/static/fonts/Biotif-RegularItalic.woff2") format("woff2");
+    url("/static/fonts/Biotif-RegularItalic.woff") format("woff"),
+    url("/static/fonts/Biotif-RegularItalic.woff2") format("woff2");
   font-weight: normal;
   font-style: italic;
 }
@@ -46,8 +46,8 @@
 @font-face {
   font-family: "Fira Code";
   src:
-          url("/static/fonts/FiraCode-Regular.woff") format("woff"),
-          url("/static/fonts/FiraCode-Regular.woff2") format("woff2");
+    url("/static/fonts/FiraCode-Regular.woff") format("woff"),
+    url("/static/fonts/FiraCode-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -55,8 +55,8 @@
 @font-face {
   font-family: "Neuzeit Grotesk Bold";
   src:
-          url("/static/fonts/NeuzeitGrotesk-Bold.woff") format("woff"),
-          url("/static/fonts/NeuzeitGrotesk-Bold2.woff2") format("woff2");
+    url("/static/fonts/NeuzeitGrotesk-Bold.woff") format("woff"),
+    url("/static/fonts/NeuzeitGrotesk-Bold2.woff2") format("woff2");
   font-weight: Bold;
   font-style: normal;
 }
