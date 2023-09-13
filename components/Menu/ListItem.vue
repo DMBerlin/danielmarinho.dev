@@ -13,7 +13,6 @@ const lottieRef = ref();
 const animate = () => {
   lottieRef.value.goToAndPlay(0, true);
 };
-
 </script>
 <template lang="pug">
 div(
@@ -22,14 +21,14 @@ div(
 ).list-item
   div.flex.justify-center.items-center
     LottieAnimation(
-      :animation-data="props.icon"
-      :auto-play="false"
       ref="lottieRef"
       autoplay
+      :animation-data="props.icon"
+      :auto-play="false"
     ).menu-icon
   div.w-full.px-6
     span.menu-label {{ props.label }}
-  template(v-for="key in props.shortcut")
+  template(v-for="(key, index) in props.shortcut" :key="index")
     div.shortcut-btn.flex.justify-center.items-center.mx-1
       p.text-sm.text-gray-400 {{ key }}
 </template>

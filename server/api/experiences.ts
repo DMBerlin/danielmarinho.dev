@@ -1,10 +1,11 @@
-import { defineEventHandler, EventHandlerResponse, H3Event } from "h3";
+import { defineEventHandler, EventHandlerResponse } from "h3";
 import { UserExperience } from "~/types/useExperiences";
 
 export default defineEventHandler(
-  (event: H3Event): EventHandlerResponse<UserExperience[]> => {
+  (): EventHandlerResponse<UserExperience[]> => {
     return [
       {
+        id: 1,
         companyUrl: "https://www.gupy.io",
         companyName: "Gupy",
         jobTitle: "Software Development Engineer II",
@@ -19,6 +20,7 @@ export default defineEventHandler(
         endDate: new Date().toISOString(),
       },
       {
+        id: 2,
         companyUrl: "https://www.niduu.com",
         companyName: "Niduu",
         jobTitle: "Back-end Developer",
@@ -34,6 +36,7 @@ export default defineEventHandler(
         endDate: new Date("2022-5-1").toISOString(),
       },
       {
+        id: 3,
         companyUrl: "https://terravivaseguros.com.br",
         companyName: "Terra Viva Seguros",
         jobTitle: "Full-stack Developer",
@@ -47,6 +50,7 @@ export default defineEventHandler(
         endDate: new Date("2019-10-1").toISOString(),
       },
       {
+        id: 4,
         companyUrl: "https://www.uema.br",
         companyName: "Universidade Estadual do Maranhão",
         jobTitle: "Software Developer",
@@ -60,6 +64,7 @@ export default defineEventHandler(
         endDate: new Date("2018-7-1").toISOString(),
       },
       {
+        id: 5,
         companyUrl: "https://www.fapema.br",
         companyName: "Fundação de Amparo e Pesquisa do Maranhão",
         jobTitle: "Software Developer",
@@ -72,6 +77,7 @@ export default defineEventHandler(
         endDate: new Date("2015-8-1").toISOString(),
       },
       {
+        id: 6,
         companyUrl: "https://www.caema.ma.gov.br",
         companyName: "Companhia de Saneamento Ambiental do Maranhão",
         jobTitle: "Systems Support",
@@ -84,6 +90,7 @@ export default defineEventHandler(
         endDate: new Date("2014-11-1").toISOString(),
       },
       {
+        id: 7,
         companyUrl: "https://www.bb.com.br",
         companyName: "Banco do Brasil",
         jobTitle: "Software Developer",
@@ -97,6 +104,7 @@ export default defineEventHandler(
         endDate: new Date("2013-12-1").toISOString(),
       },
       {
+        id: 8,
         companyUrl: "https://www.pitagoras.com.br",
         companyName: "Faculdade Pitágoras",
         jobTitle: "Full-stack Developer",
@@ -109,6 +117,7 @@ export default defineEventHandler(
         endDate: new Date("2012-11-29").toISOString(),
       },
       {
+        id: 9,
         companyUrl: "https://www.danielmarinho.dev",
         companyName: "Freelancer",
         jobTitle: "Web Developer",

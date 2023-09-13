@@ -6,6 +6,6 @@ const navItems = useNavigation();
 <template lang="pug">
 div.h-20.py-2
   div.flex.items-center.justify-center
-    template(v-for="navItem in navItems")
+    template(v-for="(navItem, index) in navItems" :key="index")
       NavbarItem(:path="navItem.path" :label="navItem.label")
 </template>

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useNewTab } from '~/composables/useNewTab';
-import { getTimeDifference } from '~/utils/dateUtils';
-
+import { useNewTab } from "~/composables/useNewTab";
+import { getTimeDifference } from "~/utils/dateUtils";
 const props = defineProps<{
   companyUrl: string;
   companyName: string;
+  companyLogo?: string;
   jobLocation: string;
   jobDescription: string[];
   jobTitle: string;
@@ -14,14 +14,16 @@ const props = defineProps<{
 </script>
 <template lang="pug">
 div.career-card
-  p.career-title {{ props.jobTitle }}
   div.flex.justify-start.items-start
-    div(@click="useNewTab(props.companyUrl)").career-company {{ props.companyName }}
-    div.career-location {{ props.jobLocation }}
+    div.company-details
+      p.career-title {{ props.jobTitle }}
+      div.flex.justify-start.items-start
+        div(@click="useNewTab(props.companyUrl)").career-company {{ props.companyName }}
+        div.career-location {{ props.jobLocation }}
   div
     div.career-period {{ getTimeDifference(props.startDate, props.endDate) }}
   div
-    template(v-for="description in props.jobDescription")
+    template(v-for="(description, index) in props.jobDescription" :key="index")
       p.career-description {{ description }}
 </template>
 <style scoped lang="scss">
@@ -57,7 +59,7 @@ div.career-card
 .career-description {
   color: $--colors-secondary;
   font-family: $--fonts-body;
-  font-size: 14px;;
+  font-size: 14px;
 }
 .career-description::before {
   color: $--colors-secondary;
@@ -86,6 +88,9 @@ div.career-card
   color: $--colors-secondary;
 }
 @media screen and (max-width: 768px) {
+  .company-logo {
+    display: none;
+  }
   .career-company {
     display: inline-flex;
   }

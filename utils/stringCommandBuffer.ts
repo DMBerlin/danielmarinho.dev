@@ -12,7 +12,7 @@ export class StringCommandBuffer implements StringCommandBufferInterface {
     clearTimeout(this.timer);
     this.value += str;
 
-    this.timer = setTimeout(() => {
+    this.timer = setTimeout((): void => {
       this.value = "";
     }, this.delay);
   }

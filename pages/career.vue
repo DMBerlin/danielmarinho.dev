@@ -21,7 +21,7 @@ import successIcon from "~/assets/icons/success.json";
 const route = useRoute();
 const config = usePublicConfig();
 const description = ref(
-  "That\'s when I realized that web engineering is my one true passion! It was like a light bulb moment that made my heart go, \"click!\"",
+  'That\'s when I realized that web engineering is my one true passion! It was like a light bulb moment that made my heart go, "click!"',
 );
 const fullPath = config.root + route.fullPath;
 
@@ -82,17 +82,25 @@ div.flex.flex-col.flex-grow
       section
         TextQuote(:quote="description")
       section.flex.justify-end.items-end
-        ReactiveButton(:callback="copyBio" :icon="copyPasteIcon" :on-click-icon="successIcon" :reactive-anim-time="2020" ald="Copy Bio" label="Copy Bio")
+        ReactiveButton(
+:callback="copyBio"
+:icon="copyPasteIcon"
+:on-click-icon="successIcon"
+:reactive-anim-time="2020"
+ald="Copy Bio"
+label="Copy Bio")
         p.text-gray-400.text-xl.mx-4.pb-2  •
-        RegularButton(@click="downloadResume" :icon="downloadIcon" ald="Download" label="Download Resumé")
+        RegularButton(:icon="downloadIcon" ald="Download" label="Download Resumé" @click="downloadResume")
       section
         p.section-title Career
         template(v-if="isLoading")
         template(v-else)
           CareerExperienceCard(
             v-for="experience in experiences"
+            :key="experience.id"
             :company-name="experience.companyName"
             :company-url="experience.companyUrl"
+            :company-logo="experience.companyLogo"
             :job-location="experience.jobLocation"
             :job-title="experience.jobTitle"
             :job-description="experience.jobDescription"

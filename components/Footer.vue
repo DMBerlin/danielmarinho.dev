@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { useNewTab } from "~/composables/useNewTab";
+import { useFooterItems } from "~/composables/useFooter";
 const footerItems = useFooterItems();
 </script>
 <template lang="pug">
 div.h-10
   div.flex.items-center.justify-center
-    template(v-for="item of footerItems")
+    template(v-for="(item, index) of footerItems" :key="index")
       div(@click="useNewTab(item.url)").flex.items-center.justify-center.px-2.svg-icon
         p.footer-link.text-sm {{ item.label }}
         svg(width="18px" height="18px" viewBox="0 0 35 35").mt-1.mx-2.footer-icon
