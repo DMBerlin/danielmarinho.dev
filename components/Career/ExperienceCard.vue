@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useNewTab } from '~/composables/useNewTab';
-import { getTimeDifference } from '~/utils/dateUtils';
+import { useNewTab } from "~/composables/useNewTab";
+import { getTimeDifference } from "~/utils/dateUtils";
 const props = defineProps<{
   companyUrl: string;
   companyName: string;
@@ -20,7 +20,7 @@ div.career-card
   div
     div.career-period {{ getTimeDifference(props.startDate, props.endDate) }}
   div
-    template(v-for="description in props.jobDescription")
+    template(v-for="(description, index) in props.jobDescription" :key="index")
       p.career-description {{ description }}
 </template>
 <style scoped lang="scss">
@@ -56,7 +56,7 @@ div.career-card
 .career-description {
   color: $--colors-secondary;
   font-family: $--fonts-body;
-  font-size: 14px;;
+  font-size: 14px;
 }
 .career-description::before {
   color: $--colors-secondary;
