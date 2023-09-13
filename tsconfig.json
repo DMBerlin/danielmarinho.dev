@@ -9,7 +9,6 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "target": "es2017",
-    "verbatimModuleSyntax": true,
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
@@ -31,13 +30,12 @@
     "allowSyntheticDefaultImports": true,
 
     /* Not transpiling with TypeScript: */
-    "moduleResolution": "NodeNext",
     "isolatedModules": true,
-    "module": "NodeNext",
+    "module": "CommonJS",
     "noEmit": true,
 
     /* Code in the DOM: */
-    "lib": ["es2022", "dom"],
+    "lib": ["es2022", "dom"]
   },
   "vueCompilerOptions": {
     "plugins": ["@vue/language-plugin-pug"]
