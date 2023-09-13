@@ -1,10 +1,11 @@
-// .prettierignore
-
 node_modules
 *.log*
+.husky
 .nuxt
+.vercel
 .nitro
 .cache
 .output
 .env
+assets
 dist

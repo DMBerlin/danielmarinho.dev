@@ -1,6 +1,7 @@
 import { ConfigLayerMeta, InputConfig } from "c12";
 import { NuxtConfig } from "@nuxt/schema";
 import { defineNuxtConfig } from "nuxt/config";
+import eslintPlugin from "vite-plugin-eslint";
 
 export default defineNuxtConfig({
   app: {
@@ -15,6 +16,7 @@ export default defineNuxtConfig({
   imports: { autoImport: true },
   css: ["~/assets/css/styles.css"],
   vite: {
+    plugins: [eslintPlugin()],
     css: {
       preprocessorOptions: {
         scss: {
@@ -23,7 +25,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/device"],
+  modules: ["@nuxtjs/device", "@nuxtjs/tailwindcss", "@nuxtjs/eslint-module"],
   runtimeConfig: {
     public: {
       root: process.env.BASE_URL || "localhost:3000",
