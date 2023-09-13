@@ -16,7 +16,6 @@ export default defineEventHandler(
           "Systems Observability and Monitoring.",
           "Development of serverless applications.",
         ],
-        companyLogo: "~/static/logos/gupy.png",
         startDate: new Date("2022-6-1").toISOString(),
         endDate: new Date().toISOString(),
       },
