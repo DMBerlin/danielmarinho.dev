@@ -20,6 +20,9 @@ export default defineNuxtConfig({
   css: ["~/assets/css/styles.css"],
   vite: {
     plugins: [eslintPlugin()],
+    optimizeDeps: {
+      exclude: ["class-validator"],
+    },
     css: {
       preprocessorOptions: {
         scss: {
@@ -27,6 +30,9 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  build: {
+    transpile: ["class-validator"],
   },
   modules: ["@nuxtjs/device", "@nuxtjs/tailwindcss", "@nuxtjs/eslint-module"],
   runtimeConfig: {
