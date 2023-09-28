@@ -12,11 +12,17 @@ export default defineNuxtConfig({
       ],
     },
   },
+  typescript: {
+    strict: true,
+  },
   devtools: { enabled: true },
   imports: { autoImport: true },
   css: ["~/assets/css/styles.css"],
   vite: {
     plugins: [eslintPlugin()],
+    optimizeDeps: {
+      exclude: ["class-validator"],
+    },
     css: {
       preprocessorOptions: {
         scss: {
@@ -24,6 +30,9 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  build: {
+    transpile: ["class-validator"],
   },
   modules: ["@nuxtjs/device", "@nuxtjs/tailwindcss", "@nuxtjs/eslint-module"],
   runtimeConfig: {

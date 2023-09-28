@@ -37,7 +37,7 @@ div.flex-grow
       div.max-w-960px.name-header.py-6
         GradientTitle(
           title="Daniel Marinho"
-          left-color="#6363f1"
+          left-color="#a163f1"
           right-color="#3498ea"
           size="4.5rem"
         )
