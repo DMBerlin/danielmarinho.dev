@@ -128,7 +128,7 @@ export default defineEventHandler(
           "WordPress development for personal blogs and plugins.",
         ],
         startDate: new Date("2008-1-2").toISOString(),
-        endDate: new Date("2011-11-2").toISOString(),
+        endDate: new Date("2010-11-30").toISOString(),
       },
     ];
   },
