@@ -119,7 +119,7 @@ export default defineEventHandler(
       {
         id: 9,
         companyUrl: "https://www.danielmarinho.dev",
-        companyName: "Freelancer",
+        companyName: "Freelance Work",
         jobTitle: "Web Developer",
         jobLocation: "Brazil",
         jobDescription: [
@@ -128,7 +128,7 @@ export default defineEventHandler(
           "WordPress development for personal blogs and plugins.",
         ],
         startDate: new Date("2008-1-2").toISOString(),
-        endDate: new Date("2011-12-1").toISOString(),
+        endDate: new Date("2010-11-30").toISOString(),
       },
     ];
   },
