@@ -42,7 +42,8 @@ div.flex-grow
           size="4.5rem"
         )
       div.max-w-960px
-        p.my-title Software Development Engineer, CS B.Sc.
+        p.my-title Senior Software Engineer at
+          span(@click="useNewTab('https://mblabs.com.br')").my-company.underline.font-bold.px-2.cursor-pointer MB Labs.
         p.my-label {{ description }}
       div.max-w-960px
         div(@click="openMenu").flex.justify-center.items-center.h-3px.my-8.cursor-pointer.shortcut-btn
