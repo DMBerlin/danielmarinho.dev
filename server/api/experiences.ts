@@ -12,9 +12,9 @@ export default defineEventHandler(
         jobLocation: "Brazil",
         jobDescription: [
           "Developing Back-end solutions at Grupo Boticário",
-          "- Maintainability of Back-end services at AWS",
-          "- Development of NodeJS Applications using NestJS",
-          "- Implement good practices of team building and application development",
+          "Maintainability of Back-end services at AWS",
+          "Development of NodeJS Applications using NestJS",
+          "Implement good practices of team building and application development",
         ],
         startDate: new Date("2023-11-6").toISOString(),
         endDate: new Date().toISOString(),
