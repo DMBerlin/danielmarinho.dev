@@ -15,7 +15,7 @@
     "prepare": "husky install",
     "build": "nuxt build",
     "dev": "nuxt dev --dotenv .env.local",
-    "start:dev": "nuxi cleanup & pnpm dev",
+    "start:dev": "nuxi cleanup & pnpm lint:fix & pnpm dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
