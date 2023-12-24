@@ -8,6 +8,7 @@ import { useNewTab } from "~/composables/useNewTab";
 import GradientTitle from "~/components/GradientTitle.vue";
 import RegularButton from "~/components/RegularButton.vue";
 import ReactiveButton from "~/components/ReactiveButton.vue";
+import CarrouselLabelButton from "~/components/CarrouselLabelButton.vue";
 import CareerExperienceCard from "~/components/Career/ExperienceCard.vue";
 import { useExperiences } from "~/composables/useExperiences";
 import { usePublicConfig } from "~/composables/usePublicConfig";
@@ -39,8 +40,10 @@ useHead({
 const isLoading = ref(true);
 const logEvent = useLogEvent();
 const { cvFileUrl } = usePublicConfig();
+const companyLabels = ref([]);
 const experiences = await useExperiences().then((experiences) => {
   isLoading.value = false;
+  companyLabels.value = experiences.map((experience) => experience.companyName);
   return experiences;
 });
 const downloadResume = ref(() => {
@@ -51,6 +54,7 @@ const copyBio = ref(() => {
   logEvent.emit(EventNames.BIO_COPIED);
   clipboard.write(description.value);
 });
+
 onBeforeMount(() => useNavigationStateHandler());
 </script>
 <template lang="pug">
@@ -70,6 +74,9 @@ div.flex.flex-col.flex-grow
             span.profile-pic
             p.pb-5 Hello there! 👋
             p.pb-5 I'm Daniel Marinho, a Computer Scientist Bachelor and Software Engineer living in <label class="text-highlight">Brazil</label>. 🏖️
+            p.pb-5 I've already had the opportunity to work in a lot of different companies, such as
+              CarrouselLabelButton(:labels="companyLabels")
+              label .
             p.pb-5 I developed a passion for computers in high school. Back then, I was the person who created static web pages for fun. Most of my social activities revolved around the school <label class="text-highlight">basketball team</label>, where I played as a center with my school mates. 🏀
         div.flex.justify-start.items-start
           div.text-area
