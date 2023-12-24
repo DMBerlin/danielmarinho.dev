@@ -5,6 +5,21 @@ export default defineEventHandler(
   (): EventHandlerResponse<UserExperience[]> => {
     return [
       {
+        id: 0,
+        companyUrl: "https://www.mblabs.com.br",
+        companyName: "MB Labs",
+        jobTitle: "Senior Software Engineer II",
+        jobLocation: "Brazil",
+        jobDescription: [
+          "Developing Back-end solutions at Grupo Boticário.",
+          "Maintainability of Back-end services at AWS.",
+          "Development of NodeJS Applications using NestJS.",
+          "Implement good practices of team building and application development",
+        ],
+        startDate: new Date("2023-11-6").toISOString(),
+        endDate: new Date().toISOString(),
+      },
+      {
         id: 1,
         companyUrl: "https://www.gupy.io",
         companyName: "Gupy",
@@ -17,7 +32,7 @@ export default defineEventHandler(
           "Development of serverless applications.",
         ],
         startDate: new Date("2022-6-1").toISOString(),
-        endDate: new Date().toISOString(),
+        endDate: new Date("2023-8-2").toISOString(),
       },
       {
         id: 2,
