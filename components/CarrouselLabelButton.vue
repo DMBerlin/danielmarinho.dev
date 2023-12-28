@@ -21,7 +21,7 @@ onBeforeMount(() => {
 </script>
 <template lang="pug">
 transition-group(tag="label" )
-  label(v-for="(label, id) in carrousel" :key="id" @click="rotate").computed-label {{ label }}
+  label(v-for="(label, id) in carrousel" :key="id" class="text-highlight" @click="rotate") {{ label }}
 </template>
 <style scoped lang="scss">
 .label-fade-enter-active,
