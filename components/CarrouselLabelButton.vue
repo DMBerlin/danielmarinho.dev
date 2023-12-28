@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, defineProps, onBeforeMount } from "vue";
 
 const carrousel = ref([]);
 const currentIndex = ref(0);
@@ -39,14 +39,16 @@ transition-group(tag="label" )
   opacity: 1;
   transform: translateY(0);
 }
-.computed-label {
+label {
   padding: 6px;
   margin: 6px;
   color: $--colors-primary;
-  background-color: $--colors-hover;
   border-radius: 8px;
+  transition: all linear 0.3s;
+  font-weight: bold;
 }
-.computed-label:hover {
+label:hover {
   cursor: pointer;
+  background-color: $--colors-hover;
 }
 </style>
