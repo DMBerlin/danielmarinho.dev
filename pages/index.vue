@@ -6,6 +6,7 @@ import { useAppState } from "~/composables/useAppState";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import { usePublicConfig } from "~/composables/usePublicConfig";
 import GradientTitle from "~/components/GradientTitle.vue";
+import { useExperiences } from "~/composables/useExperiences";
 
 const config = usePublicConfig();
 const route = useRoute();
@@ -28,6 +29,11 @@ const { isWindows } = useDevice();
 const openMenu = () => {
   state.value.navigation.enabled = true;
 };
+
+const experiences = await useExperiences();
+
+const currentExperience = experiences.at(-1);
+
 onBeforeMount(() => useNavigationStateHandler());
 </script>
 <template lang="pug">
@@ -42,8 +48,8 @@ div.flex-grow
           size="4.5rem"
         )
       div.max-w-960px
-        p.my-title Senior Software Engineer at
-          span(@click="useNewTab('https://mblabs.com.br')").my-company.underline.font-bold.px-2.cursor-pointer MB Labs.
+        p.my-title {{ currentExperience.jobTitle }} at
+          span(@click="useNewTab(currentExperience.companyUrl)").my-company.underline.font-bold.px-2.cursor-pointer {{ currentExperience.companyName }}.
         p.my-label {{ description }}
       div.max-w-960px
         div(@click="openMenu").flex.justify-center.items-center.h-3px.my-8.cursor-pointer.shortcut-btn
