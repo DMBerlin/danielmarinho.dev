@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 
-const labelIndex = ref(0);
-
 const props = defineProps<{
   labels: string[];
 }>();
 
+const labelIndex = ref(props.labels.length - 1);
+
 const rotate = () => {
   labelIndex.value =
-    labelIndex.value === props.labels.length - 1
-      ? (labelIndex.value = 0)
-      : labelIndex.value + 1;
+    labelIndex.value === 0
+      ? (labelIndex.value = props.labels.length - 1)
+      : labelIndex.value - 1;
 };
 
 const currentLabel = computed(() => props.labels.at(labelIndex.value));
