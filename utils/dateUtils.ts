@@ -47,7 +47,7 @@ export function getTimeDifference(from: Date, to: Date): string {
   if (years > 0) {
     result += years === 1 ? `${years} yr ` : `${years} yrs `;
   }
-  if (months > 0) {
+  if (months >= 0) {
     result += months === 1 ? `${months} mo` : `${months} mos`;
   }
 
