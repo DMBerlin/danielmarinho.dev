@@ -1,27 +1,24 @@
 <script setup lang="ts">
-import { ref, defineProps, onBeforeMount } from "vue";
+import { computed, ref } from "vue";
 
-const carrousel = ref([]);
-const currentIndex = ref(0);
+const labelIndex = ref(0);
+
 const props = defineProps<{
   labels: string[];
 }>();
-const carrouselHandler = () => {
-  currentIndex.value =
-    currentIndex.value === props.labels.length - 1 ? 0 : currentIndex.value + 1;
-};
+
 const rotate = () => {
-  carrousel.value.pop();
-  carrouselHandler();
-  carrousel.value.push(props.labels.at(currentIndex.value));
+  labelIndex.value =
+    labelIndex.value === props.labels.length - 1
+      ? (labelIndex.value = 0)
+      : labelIndex.value + 1;
 };
-onBeforeMount(() => {
-  carrousel.value.push(props.labels.at(currentIndex.value));
-});
+
+const currentLabel = computed(() => props.labels.at(labelIndex.value));
 </script>
 <template lang="pug">
-transition-group(tag="label" )
-  label(v-for="(label, id) in carrousel" :key="id" class="text-highlight" @click="rotate") {{ label }}
+span
+  label(class="text-highlight" @click="rotate") {{ currentLabel }}
 </template>
 <style scoped lang="scss">
 .label-fade-enter-active,
