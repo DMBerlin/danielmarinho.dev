@@ -170,6 +170,6 @@ export default defineEventHandler(
         startDate: new Date("2024-1-8").toISOString(),
         endDate: new Date().toISOString(),
       },
-    ];
+    ].reverse();
   },
 );
