@@ -58,8 +58,8 @@ export default defineEventHandler(
         title: "API Gateway for Personalized Delivery",
         description:
           "Crafted and executed a visionary initiative to architect and implement a cutting-edge API Gateway within a live production environment, seamlessly amalgamating disparate data sources from multifaceted endpoints into a singular, robust interface.",
-        stack: [1, 6, 8, 9, 12, 16, 17, 21],
+        stack: [1, 7, 8, 11, 18, 19, 20, 21],
       },
-    ];
+    ].reverse();
   },
 );
