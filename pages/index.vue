@@ -32,7 +32,7 @@ const openMenu = () => {
 
 const experiences = await useExperiences();
 
-const currentExperience = experiences.at(-1);
+const currentExperience = experiences.at(0);
 
 onBeforeMount(() => useNavigationStateHandler());
 </script>
