@@ -165,7 +165,8 @@ export default defineEventHandler(
         jobLocation: "Brazil",
         jobDescription: [
           "Back-end engineer on the Integrations Team.",
-          "Development of NodeJS applications on a Microservice Environment.",
+          "Development of APIs in a Microservice environment",
+          "Development of Event Driven Services using Messaging Brokers and Log Monitoring",
         ],
         startDate: new Date("2024-1-8").toISOString(),
         endDate: new Date().toISOString(),
