@@ -5,8 +5,9 @@ import { useRoute } from "vue-router";
 import { useAppState } from "~/composables/useAppState";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import { usePublicConfig } from "~/composables/usePublicConfig";
-import GradientTitle from "~/components/GradientTitle.vue";
 import { useExperiences } from "~/composables/useExperiences";
+import SpeedInsights from "@vercel/speed-insights/dist/nuxt";
+import GradientTitle from "~/components/GradientTitle.vue";
 
 const config = usePublicConfig();
 const route = useRoute();
@@ -62,6 +63,7 @@ div.flex-grow
           template(v-else)
             div.font-semibold.text-xl.py-2.tap-to-start-label Tap to start
             span.tap-start-icon
+  SpeedInsights
 </template>
 <style scoped lang="scss">
 .tap-to-start-label {
