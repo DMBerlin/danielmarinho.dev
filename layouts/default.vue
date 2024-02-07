@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SpeedInsights } from "@vercel/speed-insights/nuxt";
 import { onBeforeMount } from "vue";
 import { useMenu } from "~/composables/useMenu";
 import { KeyboardEvents } from "~/types/useEvent";
@@ -17,4 +18,5 @@ div
     NavbarWidget
     slot
     Footer
+  SpeedInsights
 </template>

@@ -2,11 +2,12 @@
 import { onBeforeMount, ref } from "vue";
 import { useHead } from "@unhead/vue";
 import { useRoute } from "vue-router";
+import { useDevice } from "#imports";
 import { useAppState } from "~/composables/useAppState";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import { usePublicConfig } from "~/composables/usePublicConfig";
-import GradientTitle from "~/components/GradientTitle.vue";
 import { useExperiences } from "~/composables/useExperiences";
+import GradientTitle from "~/components/GradientTitle.vue";
 
 const config = usePublicConfig();
 const route = useRoute();
