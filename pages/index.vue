@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import SpeedInsights from "@vercel/speed-insights/dist/nuxt";
 import { onBeforeMount, ref } from "vue";
 import { useHead } from "@unhead/vue";
 import { useRoute } from "vue-router";
+import { useDevice } from "#imports";
 import { useAppState } from "~/composables/useAppState";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import { usePublicConfig } from "~/composables/usePublicConfig";
@@ -63,8 +63,6 @@ div.flex-grow
           template(v-else)
             div.font-semibold.text-xl.py-2.tap-to-start-label Tap to start
             span.tap-start-icon
-template
- SpeedInsights
 </template>
 <style scoped lang="scss">
 .tap-to-start-label {
