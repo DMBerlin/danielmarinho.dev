@@ -1,25 +1,36 @@
 <script setup lang="ts">
 import { LottieAnimation } from "lottie-web-vue";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 const props = defineProps<{
   icon: JSON;
   label: string;
   alt?: string;
   callback?: Function;
 }>();
+
 const lottieRef = ref();
 const animate = () => lottieRef.value.goToAndPlay(0, true);
+const isAnimating = ref(false);
+const animationHandler = computed(() => isAnimating.value);
+
+const callbackHandler = () => {
+  isAnimating.value = true;
+  return props.callback().then(() => {
+    isAnimating.value = false;
+  });
+};
 </script>
 <template lang="pug">
 button(
   @mouseenter="animate"
-  @click="props.callback"
+  @click="callbackHandler"
 ).btn-standard
   LottieAnimation(
     ref="lottieRef"
     autoplay
-    :animation-data="props.icon"
     :auto-play="false"
+    :animation-data="props.icon"
+    :loop="animationHandler"
   ).lottie-icon
   span {{ props.label }}
 </template>
