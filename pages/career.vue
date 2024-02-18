@@ -18,6 +18,7 @@ import { useLogEvent } from "~/composables/useLogEvent";
 import copyPasteIcon from "~/assets/icons/copy-bio.json";
 import downloadIcon from "~/assets/icons/download.json";
 import successIcon from "~/assets/icons/success.json";
+import { useFiles } from "~/composables/useFiles";
 
 const route = useRoute();
 const config = usePublicConfig();
@@ -39,16 +40,16 @@ useHead({
 
 const isLoading = ref(true);
 const logEvent = useLogEvent();
-const { cvFileUrl } = usePublicConfig();
 const companyLabels = ref([]);
 const experiences = await useExperiences().then((experiences) => {
   isLoading.value = false;
   companyLabels.value = experiences.map((experience) => experience.companyName);
   return experiences;
 });
-const downloadResume = ref(() => {
+const downloadResume = ref(async () => {
   logEvent.emit(EventNames.RESUME_DOWNLOADED);
-  useNewTab(cvFileUrl);
+  const cvFilePath = await useFiles();
+  await useNewTab(cvFilePath);
 });
 const copyBio = ref(() => {
   logEvent.emit(EventNames.BIO_COPIED);
@@ -97,7 +98,7 @@ div.flex.flex-col.flex-grow
 ald="Copy Bio"
 label="Copy Bio")
         p.text-gray-400.text-xl.mx-4.pb-2  •
-        RegularButton(:icon="downloadIcon" ald="Download" label="Download Resumé" @click="downloadResume")
+        RegularButton(:icon="downloadIcon" ald="Download" label="Download Resumé" :callback="downloadResume")
       section
         p.section-title Career
         template(v-if="isLoading")
