@@ -100,11 +100,18 @@ Here you'll find all the utility functions used on the project.
 
 This project uses [Commintlint](https://commitlint.js.org/#/) and [Husky](https://typicode.github.io/husky/) to keep nice commit semantics. Checkout their pages to find out more about the ideia behind Semantic Commit Messages.
 
+## 🔥 Firebase Storage
+
+This project also uses Firebase Storage to save files. The `resume.pdf` is saved on a cloud storage bucket and can be downloaded through the `career` page.
+
+To use Firebase in the project, create your project's profile on [Google's Firebase Console](https://firebase.google.com). Follow it's guide to have your env keys.
+
 ## 📝 Environment Variables
 
 This projects use environment variables to set custom string values to certain config parameters. Here are a list of environment variables you can customize:
 
 ```dotenv
+# PAGE CONFIG
 REPOSITORY_URL="" # URL to the projects git repository
 LINKEDIN_PROFILE_URL="" # Your LinkedIn url profile
 INSTAGRAM_PROFILE_URL="" # Your Instagram url profile
@@ -114,6 +121,18 @@ EMAIL_PROFILE_URL="" # Your email contact
 BASE_URL="" # This site url
 SITE_AUTHOR="" # Your name
 CV_FILE_URL="" # Your CV download path
+
+# FIREBASE CONFIG
+## (Firebase Storage)
+FB_API_KEY=""
+FB_AUTH_DOMAIN=""
+FB_PROJECT_ID=""
+FB_STORAGE_BUCKET=""
+FB_MESSAGING_SENDER_ID=""
+FB_APP_ID=""
+FB_MEASUREMENT_ID=""
+FB_BUCKET_URL=""
+FB_FILE_PATH=""
 ```
 
 ## 📖 License
