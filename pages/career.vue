@@ -4,9 +4,7 @@ import { useHead } from "@unhead/vue";
 import clipboard from "clipboardy";
 import { useRoute } from "vue-router";
 import TextQuote from "~/components/TextQuote.vue";
-import { useNewTab } from "~/composables/useNewTab";
 import GradientTitle from "~/components/GradientTitle.vue";
-import RegularButton from "~/components/RegularButton.vue";
 import ReactiveButton from "~/components/ReactiveButton.vue";
 import CarrouselLabelButton from "~/components/CarrouselLabelButton.vue";
 import CareerExperienceCard from "~/components/Career/ExperienceCard.vue";
@@ -18,6 +16,8 @@ import { useLogEvent } from "~/composables/useLogEvent";
 import copyPasteIcon from "~/assets/icons/copy-bio.json";
 import downloadIcon from "~/assets/icons/download.json";
 import successIcon from "~/assets/icons/success.json";
+import settingUp from "~/assets/icons/setting-up.json";
+import { useNewTab } from "~/composables/useNewTab";
 import { useFiles } from "~/composables/useFiles";
 
 const route = useRoute();
@@ -47,15 +47,14 @@ const experiences = await useExperiences().then((experiences) => {
   return experiences;
 });
 const downloadResume = ref(async () => {
-  logEvent.emit(EventNames.RESUME_DOWNLOADED);
   const cvFilePath = await useFiles();
   await useNewTab(cvFilePath);
+  logEvent.emit(EventNames.RESUME_DOWNLOADED);
 });
 const copyBio = ref(() => {
-  logEvent.emit(EventNames.BIO_COPIED);
   clipboard.write(description.value);
+  logEvent.emit(EventNames.BIO_COPIED);
 });
-
 onBeforeMount(() => useNavigationStateHandler());
 </script>
 <template lang="pug">
@@ -91,14 +90,22 @@ div.flex.flex-col.flex-grow
         TextQuote(:quote="description")
       section.flex.justify-end.items-end
         ReactiveButton(
-:callback="copyBio"
-:icon="copyPasteIcon"
-:on-click-icon="successIcon"
-:reactive-anim-time="2020"
-ald="Copy Bio"
-label="Copy Bio")
+          ald="Copy Bio"
+          label="Copy Bio"
+          :icon="copyPasteIcon"
+          :on-click-icon="successIcon"
+          :reactive-anim-time="2020"
+          :callback="copyBio"
+        )
         p.text-gray-400.text-xl.mx-4.pb-2  •
-        RegularButton(:icon="downloadIcon" ald="Download" label="Download Resumé" :callback="downloadResume")
+        ReactiveButton(
+          ald="Download"
+          label="Download Resumé"
+          :icon="downloadIcon"
+          :on-click-icon="settingUp"
+          :reactive-anim-time="2020"
+          :callback="downloadResume"
+        )
       section
         p.section-title Career
         template(v-if="isLoading")
