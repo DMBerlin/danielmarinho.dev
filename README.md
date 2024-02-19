@@ -30,10 +30,16 @@ cd danielmarinho.dev
 pnpm install
 ```
 
-4. Run locally:
+4. Copy .env.example to local and use your values:
 
 ```sh
-pnpm dev -o
+cp .env.example .env.local
+```
+
+5. Run locally:
+
+```sh
+pnpm start:dev
 ```
 
 ## 🗂️ File structure
