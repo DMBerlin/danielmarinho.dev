@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     transpile: ["class-validator"],
   },
   modules: ["@nuxtjs/device", "@nuxtjs/tailwindcss", "@nuxtjs/eslint-module"],
+  plugins: ["~/plugins/analytics.client", "~/plugins/firebase.client"],
   runtimeConfig: {
     public: {
       root: process.env.BASE_URL || "localhost:3000",
@@ -47,6 +48,13 @@ export default defineNuxtConfig({
       cvFileUrl: process.env.CV_FILE_URL || "#",
       siteAuthor: process.env.SITE_AUTHOR || "Author",
       marriageIn: process.env.MARRIAGE_IN || Date.now().toString,
+      firebaseApiKey: process.env.FB_API_KEY,
+      firebaseAuthDomain: process.env.FB_AUTH_DOMAIN,
+      firebaseProjectId: process.env.FB_PROJECT_ID,
+      firebaseStorageBucket: process.env.FB_STORAGE_BUCKET,
+      firebaseMessagingSenderId: process.env.FB_MESSAGING_SENDER_ID,
+      firebaseAppId: process.env.FB_APP_ID,
+      firebaseMeasurementId: process.env.FB_MEASUREMENT_ID,
     },
   },
 }) as InputConfig<NuxtConfig, ConfigLayerMeta>;
