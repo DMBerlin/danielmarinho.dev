@@ -1,6 +1,5 @@
 import { NavigationFailure, Router, useRouter } from "vue-router";
 import { Ref } from "vue";
-import clipboard from "clipboardy";
 import { useNewTab } from "~/composables/useNewTab";
 import { ItemType, MenuItemEnums, UseMenu } from "~/types/useMenu";
 import { usePublicConfig } from "~/composables/usePublicConfig";
@@ -15,6 +14,7 @@ import projectJsonIcon from "~/assets/icons/projects.json";
 import articleJsonIcon from "~/assets/icons/articles.json";
 import copyLinkJsonIcon from "~/assets/icons/copy-link.json";
 import sourceCodeJsonIcon from "~/assets/icons/source-code.json";
+import { useClipboard } from "~/composables/useClipboard";
 
 function openWidgetState(
   state: Ref<UseAppStateInterface> = useAppState(),
@@ -23,7 +23,7 @@ function openWidgetState(
   state.value.hotkeys.enabled = false;
 }
 
-function closeWidgetState(
+export function closeWidgetState(
   state: Ref<UseAppStateInterface> = useAppState(),
 ): void {
   state.value.navigation.enabled = false;
@@ -84,8 +84,7 @@ export const menuItems = (): Array<UseMenu> => {
       label: MenuItemEnums.COPY_LINK,
       icon: jsonfy(copyLinkJsonIcon),
       shortcut: ["C"],
-      callback: () =>
-        clipboard.write(window.location.href).then(() => closeWidgetState()),
+      callback: () => useClipboard(),
     },
     {
       type: ItemType.GENERAL,

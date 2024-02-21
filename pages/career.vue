@@ -11,7 +11,7 @@ import CareerExperienceCard from "~/components/Career/ExperienceCard.vue";
 import { useExperiences } from "~/composables/useExperiences";
 import { usePublicConfig } from "~/composables/usePublicConfig";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
-import { EventNames } from "~/types/useLogEvent";
+import { EventName } from "~/types/useLogEvent";
 import { useLogEvent } from "~/composables/useLogEvent";
 import copyPasteIcon from "~/assets/icons/copy-bio.json";
 import downloadIcon from "~/assets/icons/download.json";
@@ -49,11 +49,11 @@ const experiences = await useExperiences().then((experiences) => {
 const downloadResume = ref(async () => {
   const cvFilePath = await useFiles();
   await useNewTab(cvFilePath);
-  logEvent.emit(EventNames.RESUME_DOWNLOADED);
+  logEvent.emit(EventName.RESUME_DOWNLOADED);
 });
 const copyBio = ref(() => {
   clipboard.write(description.value);
-  logEvent.emit(EventNames.BIO_COPIED);
+  logEvent.emit(EventName.BIO_COPIED);
 });
 onBeforeMount(() => useNavigationStateHandler());
 </script>
