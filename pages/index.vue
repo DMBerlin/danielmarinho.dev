@@ -30,7 +30,7 @@ useHead({
 const state = useAppState();
 const { isWindows } = useDevice();
 const openMenu = () => {
-  logEvent.emit(EventName.BIO_COPIED);
+  logEvent.emit(EventName.OPEN_MENU);
   state.value.navigation.enabled = true;
 };
 
