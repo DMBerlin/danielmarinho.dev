@@ -1,9 +1,7 @@
 import { inject } from "@vercel/analytics";
 import { defineNuxtPlugin } from "#app";
 export default defineNuxtPlugin({
-  name: "vercel-plugin",
+  name: "vercel-analytics",
   parallel: true,
-  setup() {
-    inject();
-  },
+  setup: () => inject(),
 });
