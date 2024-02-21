@@ -2,17 +2,19 @@
 import { onBeforeMount, ref } from "vue";
 import { useHead } from "@unhead/vue";
 import { useRoute } from "vue-router";
-import { useDevice } from "#imports";
+import { useDevice, useLogEvent } from "#imports";
 import { useAppState } from "~/composables/useAppState";
 import { useNavigationStateHandler } from "~/composables/useNavigation";
 import { usePublicConfig } from "~/composables/usePublicConfig";
 import { useExperiences } from "~/composables/useExperiences";
 import GradientTitle from "~/components/GradientTitle.vue";
+import { EventName } from "~/types/useLogEvent";
 
 const config = usePublicConfig();
 const route = useRoute();
 const description = ref("Passioned about Web Technology.");
 const fullPath = config.root + route.fullPath;
+const logEvent = useLogEvent();
 
 useHead({
   title: config.siteAuthor,
@@ -28,6 +30,7 @@ useHead({
 const state = useAppState();
 const { isWindows } = useDevice();
 const openMenu = () => {
+  logEvent.emit(EventName.BIO_COPIED);
   state.value.navigation.enabled = true;
 };
 
