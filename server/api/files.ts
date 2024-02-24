@@ -8,7 +8,7 @@ import {
 import { initializeApp, FirebaseApp } from "firebase/app";
 import { defineEventHandler } from "h3";
 
-export default defineEventHandler(() => {
+export default defineEventHandler(async () => {
   const firebaseApp: FirebaseApp = initializeApp({
     apiKey: process.env.FB_API_KEY,
     authDomain: process.env.FB_AUTH_DOMAIN,
