@@ -5,7 +5,7 @@ export class FirebaseService {
     try {
       return await FirebaseSingleton.getResumeFilepath();
     } catch (error) {
-      throw new Error(JSON.stringify(error));
+      console.error(error);
     }
   }
 }
