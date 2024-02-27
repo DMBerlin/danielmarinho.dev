@@ -6,7 +6,7 @@ export default defineEventHandler(() =>
   FirebaseService.getResumeFilepath().then(async (filepath: string) => {
     await MailService.sendDownloadNotification(
       "Resumé downloaded!",
-      `<p>Congrats! Someone just downloaded your resumé at <strong>${new Date()}</strong>!</p>.`,
+      `<p>Congrats! Someone just downloaded your resumé at <strong>${new Date(-3000)}</strong>!</p>.`,
     );
     return filepath;
   }),
