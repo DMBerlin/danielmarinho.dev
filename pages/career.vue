@@ -54,7 +54,6 @@ const downloadResume = ref(async () => {
   logEvent.emit(EventName.RESUME_DOWNLOADED);
 });
 const copyBio = ref(async () => {
-  await useResend();
   await clipboard.write(description.value);
   logEvent.emit(EventName.BIO_COPIED);
 });
