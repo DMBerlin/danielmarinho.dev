@@ -19,6 +19,7 @@ import successIcon from "~/assets/icons/success.json";
 import settingUp from "~/assets/icons/setting-up.json";
 import { useNewTab } from "~/composables/useNewTab";
 import { useFiles } from "~/composables/useFiles";
+import { useResend } from "~/composables/useResend";
 
 const route = useRoute();
 const config = usePublicConfig();
@@ -49,10 +50,11 @@ const experiences = await useExperiences().then((experiences) => {
 const downloadResume = ref(async () => {
   const cvFilePath = await useFiles();
   await useNewTab(cvFilePath);
+  await useResend();
   logEvent.emit(EventName.RESUME_DOWNLOADED);
 });
-const copyBio = ref(() => {
-  clipboard.write(description.value);
+const copyBio = ref(async () => {
+  await clipboard.write(description.value);
   logEvent.emit(EventName.BIO_COPIED);
 });
 onBeforeMount(() => useNavigationStateHandler());

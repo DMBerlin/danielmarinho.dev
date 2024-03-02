@@ -139,6 +139,14 @@ FB_APP_ID=""
 FB_MEASUREMENT_ID=""
 FB_BUCKET_URL=""
 FB_FILE_PATH=""
+
+#RESEND API
+RESEND_API_KEY=
+RESEND_SEND_TO_EMAIL=
+RESEND_SEND_FROM_EMAIL=
+
+##NODE APP
+NODE_ENV= # Your current environment ('production' or 'development')
 ```
 
 ## 📖 License
