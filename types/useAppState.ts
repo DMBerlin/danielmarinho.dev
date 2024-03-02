@@ -1,3 +1,5 @@
+import { AppEnvironment } from "~/types/appEnvironment";
+
 export interface PublicRuntimeConfig {
   root: string;
   code: string;
@@ -13,6 +15,7 @@ export interface PublicRuntimeConfig {
 
 export interface RuntimeConfig {
   app: {
+    environment: AppEnvironment;
     baseURL: string;
     buildAssetsDir: string;
     cdnURL: string;
