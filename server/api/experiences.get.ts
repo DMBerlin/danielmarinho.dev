@@ -180,7 +180,7 @@ export default defineEventHandler(
         jobDescription: [
           "Leading software development initiatives and technical strategy.",
           "Mentoring development teams and driving engineering excellence.",
-          "Architecting and implementing scalable software solutions.",
+          "Architecting and implementing scalable software solutions in fintech.",
         ],
         startDate: new Date("2024-10-20").toISOString(),
         endDate: new Date().toISOString(),
