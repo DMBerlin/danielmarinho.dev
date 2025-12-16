@@ -169,6 +169,20 @@ export default defineEventHandler(
           "Development of Event Driven Services using Messaging Brokers and Log Monitoring",
         ],
         startDate: new Date("2024-1-8").toISOString(),
+        endDate: new Date("2024-10-20").toISOString(),
+      },
+      {
+        id: 12,
+        companyUrl: "https://www.thoughtworks.com",
+        companyName: "Thoughtworks",
+        jobTitle: "Lead Software Developer",
+        jobLocation: "Brazil",
+        jobDescription: [
+          "Leading software development initiatives and technical strategy.",
+          "Mentoring development teams and driving engineering excellence.",
+          "Architecting and implementing scalable software solutions.",
+        ],
+        startDate: new Date("2024-10-20").toISOString(),
         endDate: new Date().toISOString(),
       },
     ].reverse();
