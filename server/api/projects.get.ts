@@ -60,6 +60,20 @@ export default defineEventHandler(
           "Crafted and executed a visionary initiative to architect and implement a cutting-edge API Gateway within a live production environment, seamlessly amalgamating disparate data sources from multifaceted endpoints into a singular, robust interface.",
         stack: [1, 7, 8, 11, 18, 19, 20, 21],
       },
+      {
+        id: 8,
+        title: "Open Finance Banking Integration Platform",
+        description:
+          "Led the development of a comprehensive banking integration platform for Dominio fintech, connecting accounting offices with client banking data through Brazil's Open Finance system. Architected Node.js microservices with legacy Java system adapters, eliminating manual document collection and streamlining government compliance reporting for accounting professionals.",
+        stack: [6, 5, 15, 19, 20, 21],
+      },
+      {
+        id: 9,
+        title: "Backstage Developer Platform Implementation",
+        description:
+          "Currently implementing and customizing Spotify's Backstage platform for a Peruvian fintech serving 13+ million clients. Building developer tools and processes to accelerate development cycles for rapidly scaling engineering teams in a high-velocity fintech environment, enabling self-service capabilities and standardized development workflows.",
+        stack: [7, 6, 20, 21],
+      },
     ].reverse();
   },
 );
