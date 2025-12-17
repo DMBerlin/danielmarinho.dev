@@ -171,7 +171,7 @@ export default defineEventHandler(
           "Developed Event Driven Services using messaging brokers in a microservices architecture.",
         ],
         startDate: new Date("2024-1-8").toISOString(),
-        endDate: new Date("2024-10-20").toISOString(),
+        endDate: new Date("2025-10-20").toISOString(),
       },
       {
         id: 12,
@@ -185,7 +185,7 @@ export default defineEventHandler(
           "Creating tools and processes to support internal teams in a high-velocity fintech environment.",
           "Driving platform engineering initiatives to enable rapid scaling of development capabilities.",
         ],
-        startDate: new Date("2024-10-20").toISOString(),
+        startDate: new Date("2025-10-20").toISOString(),
         endDate: new Date().toISOString(),
       },
     ].reverse();
